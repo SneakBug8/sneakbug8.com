@@ -1,5 +1,5 @@
 import * as express from "express";
-import Post from "../core/Post";
+import Post from "../core/post";
 
 module.exports = function Init(app: express.Router)
 {

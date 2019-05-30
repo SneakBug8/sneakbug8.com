@@ -8,7 +8,16 @@ export default function Init(app: express.Application)
 
     const files = fs.readdirSync(normalizedPath);
 
-    const router = express.Router();
+    const router = express.Router ();
+
+    router.use((req, res, next) => {
+        if (req.secure) {
+            next();
+        }
+        else {
+            res.redirect("https://" + req.headers.host + req.url);
+        }
+    });
 
     router.get("/favicon.ico", (req, res) =>
     {
