@@ -1,0 +1,33 @@
+{{#extend "index"}}
+{{#content "content"}}
+<div id="welcome">
+    <div class="title">
+        <h2>Hello, my name is Pavel Nakonechnyy</h2>
+        <span class="byline">I'm a web dev, blogger and project manager.</span>
+    </div>
+    <p>It's website of web dev, blogger and project manager.</p>
+    <ul class="actions">
+        <li><a href="#" class="button">My portfolio</a></li>
+    </ul>
+</div>
+<div id="featured">
+    <div class="title">
+        <h2>Posts</h2>
+        <span class="byline">Articles I've written over past years.</span>
+    </div>
+    <ul class="style1">
+        {{#if posts}}
+        {{#each posts}}
+        <li>
+            <p class="date"><a href="#">Jan<b>05</b></a></p>
+            <h3><a href="/{{url}}">{{title}}</a></h3>
+            <p>{{excerpt}}</p>
+        </li>
+        {{/each}}
+        {{else}}
+        <p>No posts</p>
+        {{/if}}
+    </ul>
+</div>
+{{/content}}
+{{/extend}}
