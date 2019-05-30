@@ -1,3 +1,4 @@
+import * as _ from "lodash";
 import cms from "../api/cms";
 
 export default class Post
@@ -30,14 +31,14 @@ export default class Post
             fields: {
                 title: 1,
                 date: 1,
-                url: 1,
-                excerpt: 1
+                url: 1
             },
             limit: 20,
             skip: (page - 1) * 20
-        });
+        }) as Post[];
 
         if (posts.length) {
+            _.remove(posts, (post: Post) => post.hide === true);
             return posts;
         }
         else {
@@ -49,4 +50,5 @@ export default class Post
     public url: string = "";
     public content: string = "";
     public date: string = "";
+    public hide: boolean = false;
 }

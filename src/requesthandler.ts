@@ -10,6 +10,11 @@ export default function Init(app: express.Application)
 
     const router = express.Router();
 
+    router.get("/favicon.ico", (req, res) =>
+    {
+        res.header(404).render("404");
+    });
+
     for (const file of files) {
         const route = require("./routes/" + file);
         route(router);

@@ -8,7 +8,8 @@ module.exports = function Init(app: express.Router)
         const headline = await Post.LoadPage(1);
 
         res.render("home", {
-            posts: headline
+            posts: headline,
+            title: "Web development and Games"
         });
     });
 };
