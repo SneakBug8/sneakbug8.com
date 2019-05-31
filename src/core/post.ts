@@ -13,7 +13,8 @@ export default class Post
                 title: 1,
                 date: 1,
                 content: 1,
-                description: 1
+                description: 1,
+                image: 1
             }
         });
 
@@ -58,4 +59,5 @@ export default class Post
     public date: string = "";
     public hide: boolean = false;
     public description: string | null = null;
+    public image: string | null = null;
 }

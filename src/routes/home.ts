@@ -10,7 +10,7 @@ module.exports = function Init(app: express.Router)
         const header = await cms.singletons.get("homepage");
         const posts = await Post.LoadPage(1);
 
-        res.render("home", await DataFiller({
+        res.render("home", await DataFiller(req, res, {
             header: header.content,
             posts,
             title: "Веб разработка и игры",

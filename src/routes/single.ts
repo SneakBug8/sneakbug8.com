@@ -13,9 +13,10 @@ module.exports = function Init(app: express.Router)
         if (post) {
             post.content = markdown.markdown.toHTML(post.content);
 
-            res.render("single", await DataFiller({
+            res.render("single", await DataFiller(req, res, {
                 title: post.title,
                 post,
+                image: post.image,
                 description: post.description || null
             }));
         }

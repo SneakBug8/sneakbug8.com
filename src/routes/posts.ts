@@ -8,7 +8,7 @@ module.exports = function Init(app: express.Router)
     {
         const posts = await Post.LoadPage(req.params.num);
 
-        res.render("posts", await DataFiller({
+        res.render("posts", await DataFiller(req, res, {
             posts
         }));
     });

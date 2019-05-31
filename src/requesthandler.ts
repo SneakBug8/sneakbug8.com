@@ -4,9 +4,6 @@ import path = require("path");
 
 export default function Init(app: express.Application)
 {
-    const normalizedPath = path.join(__dirname, "routes");
-
-    const files = fs.readdirSync(normalizedPath);
 
     const router = express.Router();
 
@@ -34,6 +31,9 @@ export default function Init(app: express.Application)
         res.send(`<html> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         </head> <body>Verification: ca78c8da4db25671</body> </html>`);
     });
+
+    const normalizedPath = path.join(__dirname, "routes");
+    const files = fs.readdirSync(normalizedPath);
 
     for (const file of files) {
         const route = require("./routes/" + file);

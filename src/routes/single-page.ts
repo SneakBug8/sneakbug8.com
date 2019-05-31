@@ -13,7 +13,7 @@ module.exports = function Init(app: express.Router)
         if (page) {
             page.content = markdown.markdown.toHTML(page.content);
 
-            res.render("page", await DataFiller({
+            res.render("page", await DataFiller(req, res, {
                 title: page.title,
                 page,
                 description: page.description || null
