@@ -8,7 +8,7 @@ hbs.registerHelper(layouts(hbs.handlebars));
 const app = express();
 const port = 80;
 
-hbs.registerPartials(__dirname  + "/../templates");
+hbs.registerPartials(__dirname + "/../templates");
 
 app.use("/static", express.static("./static"));
 
@@ -20,6 +20,9 @@ app.use((req, res, next) =>
 
 app.set("views", "./templates");
 app.set("view engine", "hbs");
+
+import Preload from "./preloader";
+Preload();
 
 import requesthandler from "./requesthandler";
 requesthandler(app);

@@ -14,7 +14,7 @@ const collections = {
         const res = await fetch(getUrl("/api/collections/get/" + name));
 
         const product = await res.json();
-        if (!product.error && product.total) {
+        if (res.ok && !product.error && product.total) {
             return product.entries;
         }
         else {
@@ -25,7 +25,7 @@ const collections = {
     {
         const init = {
             method: "POST",
-            headers:{
+            headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(body)
@@ -34,7 +34,7 @@ const collections = {
         const res = await fetch(getUrl("/api/collections/get/" + name), init);
         const product = await res.json();
 
-        if (!product.error && product.total) {
+        if (res.ok && !product.error && product.total) {
             return product.entries;
         }
         else {
@@ -56,9 +56,23 @@ const forms = {
 
         return res.json();
     }
+};
+
+const singletons = {
+    get: async (name: string) => {
+        const res = await fetch(getUrl("/api/singletons/get/" + name));
+
+        if (res.ok && res) {
+            return res.json();
+        }
+        else {
+            return null;
+        }
+    }
 }
 
 export default {
     collections,
-    forms
+    forms,
+    singletons
 };

@@ -1,5 +1,6 @@
 import * as express from "express";
 import Post from "../core/post";
+import DataFiller from "../filler";
 
 import markdown = require("markdown");
 
@@ -12,10 +13,10 @@ module.exports = function Init(app: express.Router)
         if (post) {
             post.content = markdown.markdown.toHTML(post.content);
 
-            res.render("single", {
+            res.render("single", await DataFiller({
                 title: post.title,
                 post
-            });
+            }));
         }
         else {
             next();

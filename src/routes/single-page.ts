@@ -2,6 +2,7 @@ import * as express from "express";
 import Page from "../core/page";
 
 import markdown = require("markdown");
+import DataFiller from "../filler";
 
 module.exports = function Init(app: express.Router)
 {
@@ -12,10 +13,10 @@ module.exports = function Init(app: express.Router)
         if (page) {
             page.content = markdown.markdown.toHTML(page.content);
 
-            res.render("page", {
+            res.render("page", await DataFiller({
                 title: page.title,
                 page
-            });
+            }));
         }
         else {
             next();

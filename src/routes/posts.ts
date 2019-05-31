@@ -1,5 +1,6 @@
 import * as express from "express";
 import Post from "../core/post";
+import DataFiller from "../filler";
 
 module.exports = function Init(app: express.Router)
 {
@@ -7,8 +8,8 @@ module.exports = function Init(app: express.Router)
     {
         const posts = await Post.LoadPage(req.params.num);
 
-        res.render("posts", {
+        res.render("posts", await DataFiller({
             posts
-        });
+        }));
     });
 };

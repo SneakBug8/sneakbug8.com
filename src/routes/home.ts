@@ -1,15 +1,19 @@
 import * as express from "express";
+import cms from "../api/cms";
 import Post from "../core/post";
+import DataFiller from "../filler";
 
 module.exports = function Init(app: express.Router)
 {
     app.get("/", async (req, res) =>
     {
-        const headline = await Post.LoadPage(1);
+        const header = await cms.singletons.get("homepage");
+        const posts = await Post.LoadPage(1);
 
-        res.render("home", {
-            posts: headline,
+        res.render("home", await DataFiller({
+            header: header.content,
+            posts,
             title: "Web development and Games"
-        });
+        }));
     });
 };
