@@ -15,7 +15,8 @@ module.exports = function Init(app: express.Router)
 
             res.render("page", await DataFiller({
                 title: page.title,
-                page
+                page,
+                description: page.description || null
             }));
         }
         else {

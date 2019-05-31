@@ -10,7 +10,8 @@ export default class Page
             },
             fields: {
                 title: 1,
-                content: 1
+                content: 1,
+                description: 1
             }
         });
 
@@ -25,4 +26,5 @@ export default class Page
     public title: string = "";
     public url: string = "";
     public content: string = "";
+    public description: string | null = null;
 }

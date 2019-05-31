@@ -12,7 +12,8 @@ export default class Post
             fields: {
                 title: 1,
                 date: 1,
-                content: 1
+                content: 1,
+                description: 1
             }
         });
 
@@ -27,18 +28,23 @@ export default class Post
     public static async LoadPage(page: number)
     {
         const posts = await cms.collections.getWithParams("Posts", {
-            sort: { date: -1 },
+            sort: {
+                date: -1,
+                _created: -1
+            },
             fields: {
                 title: 1,
                 date: 1,
                 url: 1
+            },
+            filter: {
+                hide: false
             },
             limit: 20,
             skip: (page - 1) * 20
         }) as Post[];
 
         if (posts.length) {
-            _.remove(posts, (post: Post) => post.hide === true);
             return posts;
         }
         else {
@@ -51,4 +57,5 @@ export default class Post
     public content: string = "";
     public date: string = "";
     public hide: boolean = false;
+    public description: string | null = null;
 }

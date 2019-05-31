@@ -13,7 +13,9 @@ module.exports = function Init(app: express.Router)
         res.render("home", await DataFiller({
             header: header.content,
             posts,
-            title: "Web development and Games"
+            title: "Веб разработка и игры",
+            description: `Привет, меня зовут Павел Наконечный.
+            Я молодой и амбициозный веб разработчик, геймдев и проект менеджер.`
         }));
     });
 };

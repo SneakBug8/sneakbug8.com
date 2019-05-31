@@ -8,7 +8,7 @@ export default function Init(app: express.Application)
 
     const files = fs.readdirSync(normalizedPath);
 
-    const router = express.Router ();
+    const router = express.Router();
 
     /*router.use((req, res, next) => {
         if (req.secure) {
@@ -22,6 +22,17 @@ export default function Init(app: express.Application)
     router.get("/favicon.ico", (req, res) =>
     {
         res.header(404).render("404");
+    });
+
+    router.get("/google4018914a8a2b749d.html", (req, res) =>
+    {
+        res.send("google-site-verification: google4018914a8a2b749d.html");
+    });
+
+    router.get("/yandex_ca78c8da4db25671.html", (req, res) =>
+    {
+        res.send(`<html> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        </head> <body>Verification: ca78c8da4db25671</body> </html>`);
     });
 
     for (const file of files) {
