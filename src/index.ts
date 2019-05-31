@@ -3,20 +3,23 @@ import * as express from "express";
 import layouts = require("handlebars-layouts");
 import hbs = require("hbs");
 
+import * as dotenv from "dotenv";
+dotenv.load();
+
 hbs.registerHelper(layouts(hbs.handlebars));
 
 const app = express();
-const port = 80;
+const port = 1010;
 
 hbs.registerPartials(__dirname + "/../templates");
 
 app.use("/static", express.static("./static"));
 
-app.use((req, res, next) =>
+/*app.use((req, res, next) =>
 {
     console.log(req.method + " " + req.url);
     next();
-});
+});*/
 
 app.set("views", "./templates");
 app.set("view engine", "hbs");

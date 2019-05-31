@@ -1,7 +1,7 @@
 import fetch from "node-fetch";
 
-const CockpitUrl = "https://api.sneakbug8.ru";
-const CockpitToken = "4a8e180f311370d6e4a7fb95c1d09a";
+const CockpitUrl = process.env.CockpitUrl;
+const CockpitToken = process.env.CockpitToken;
 
 function getUrl(url: string)
 {

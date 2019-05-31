@@ -12,10 +12,12 @@
 	{{/if}}
 	<meta property="og:title" content="{{title}}" />
 	<meta property="og:type" content="website" />
+	{{#if url}}
 	<meta property="og:url" content="{{url}}" />
+	{{/if}}
 	{{#if image}}
 	<meta property="og:image" content="{{image}}" />
-	{{#/if}}
+	{{/if}}
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 	<link rel="shortcut icon" type="image/x-icon" sizes="16x16 32x32 64x64" href="/favicon.ico" />
 	<link href="/static/published.css" media="all" rel="stylesheet" type="text/css">

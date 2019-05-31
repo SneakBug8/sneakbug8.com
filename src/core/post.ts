@@ -3,9 +3,11 @@ import cms from "../api/cms";
 
 export default class Post
 {
+    public static PostsCollection = "Posts";
+
     public static async GetWithUrl(url: string)
     {
-        const posts = await cms.collections.getWithParams("Posts", {
+        const posts = await cms.collections.getWithParams(this.PostsCollection, {
             filter: {
                 url
             },
@@ -28,7 +30,7 @@ export default class Post
 
     public static async LoadPage(page: number)
     {
-        const posts = await cms.collections.getWithParams("Posts", {
+        const posts = await cms.collections.getWithParams(this.PostsCollection, {
             sort: {
                 date: -1,
                 _created: -1
@@ -61,3 +63,5 @@ export default class Post
     public description: string | null = null;
     public image: string | null = null;
 }
+
+Post.PostsCollection = process.env.PostsCollection as string;
