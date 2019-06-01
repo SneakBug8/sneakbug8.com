@@ -1,21 +1,25 @@
 {{#extend "index"}}
 {{#content "content"}}
-<div id="featured">
-    <div class="title">
-        <h2>Posts</h2>
-        <span class="byline">Articles I've written over past years.</span>
-    </div>
-    <ul class="style1">
-        {{#if posts}}
-        {{#each posts}}
-        <li>
-            <a href="/post/{{url}}">{{title}}</a>
-        </li>
-        {{/each}}
-        {{else}}
-        <p>No posts</p>
-        {{/if}}
-    </ul>
-</div>
+<h2>Посты</h2>
+<ul>
+    {{#if posts}}
+    {{#each posts}}
+    <li>
+        <a href="/{{url}}">{{title}}</a>
+    </li>
+    {{/each}}
+    {{else}}
+    <p>No posts</p>
+    {{/if}}
+</ul>
+<p>
+    {{#if prevpage}}
+    <a href="/posts/{{prevpage}}">Предыдущая страница</a>
+    {{/if}}
+    {{#if nextpage}}
+    <a href="/posts/{{nextpage}}">Следующая страница</a>
+    {{/if}}
+    <br><a href="/">&larr; На главную</a>
+</p>
 {{/content}}
 {{/extend}}

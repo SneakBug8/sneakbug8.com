@@ -19,6 +19,11 @@ Hello, my name is Pavel Nakonechnyy. <i>I'm a web dev, blogger and project manag
     {{else}}
     <p>No posts</p>
     {{/if}}
+    <p>
+        {{#if nextpage}}
+        <a href="/posts/{{nextpage}}">Следующая страница</a>
+        {{/if}}
+    </p>
 </ul>
 {{/content}}
 {{/extend}}

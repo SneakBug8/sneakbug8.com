@@ -6,12 +6,16 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 	<meta name="referrer" content="origin">
-	<title>Pavel Nakonechnyy | {{title}}</title>
-	{{#if description}}
-	<meta name="description" content="{{description}}">
-	{{/if}}
+	<title>{{titlePrefix}} | {{title}}</title>
 	<meta property="og:title" content="{{title}}" />
 	<meta property="og:type" content="website" />
+	{{#if description}}
+	<meta name="description" content="{{description}}">
+	<meta property="og:description" content="{{description}}">
+	{{/if}}
+	{{#if sitename}}
+	<meta property="og:site_name" content="{{sitename}}">
+	{{/if}}
 	{{#if url}}
 	<meta property="og:url" content="{{url}}" />
 	{{/if}}

@@ -2,9 +2,10 @@ import cms from "../api/cms";
 
 export default class Page
 {
+    public static PagesCollection = "Pages";
     public static async GetWithUrl(url: string)
     {
-        const posts = await cms.collections.getWithParams("Pages", {
+        const posts = await cms.collections.getWithParams(this.PagesCollection, {
             filter: {
                 url
             },
@@ -28,3 +29,5 @@ export default class Page
     public content: string = "";
     public description: string | null = null;
 }
+
+Page.PagesCollection = process.env.PagesCollection || "Pages";

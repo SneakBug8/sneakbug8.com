@@ -4,12 +4,12 @@ import layouts = require("handlebars-layouts");
 import hbs = require("hbs");
 
 import * as dotenv from "dotenv";
-dotenv.load();
+dotenv.config();
 
 hbs.registerHelper(layouts(hbs.handlebars));
 
 const app = express();
-const port = 1010;
+const port = process.env.port || 1010;
 
 hbs.registerPartials(__dirname + "/../templates");
 
@@ -30,4 +30,6 @@ Preload();
 import requesthandler from "./requesthandler";
 requesthandler(app);
 
-app.listen(port, () => console.log(`Express blog listening on port ${port}!`));
+const appName = process.env.appName || "Random blog";
+
+app.listen(port, () => console.log(appName + ` listening on port ${port}!`));
