@@ -303,3 +303,11 @@ html {
 .footerlink:last-child {
   margin-right: 5px;
 }
+
+.homelink {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 5px;
+}

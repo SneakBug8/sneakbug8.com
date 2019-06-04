@@ -22,7 +22,8 @@ module.exports = function Init(app: express.Router)
             posts,
             title: header.title,
             description: header.description,
-            nextpage
+            nextpage,
+            hidehomelink: true
         }));
     });
 };

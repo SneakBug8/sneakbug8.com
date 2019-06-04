@@ -4,3 +4,4 @@ tsconfig.tsbuildinfo
 package-lock.json
 .vscode
 .env
+/root/*
