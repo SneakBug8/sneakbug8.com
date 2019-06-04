@@ -11,8 +11,11 @@ hbs.registerHelper(layouts(hbs.handlebars));
 const app = express();
 const port = process.env.port || 1010;
 
-hbs.registerPartials(__dirname + "/../templates");
+const templatesPath = process.env.templatesPath || "templates";
 
+hbs.registerPartials(__dirname + "/../" + templatesPath);
+
+app.use(express.static("./root"));
 app.use("/static", express.static("./static"));
 
 /*app.use((req, res, next) =>
@@ -21,7 +24,7 @@ app.use("/static", express.static("./static"));
     next();
 });*/
 
-app.set("views", "./templates");
+app.set("views", "./" + templatesPath);
 app.set("view engine", "hbs");
 
 import Preload from "./preloader";

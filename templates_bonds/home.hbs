@@ -1,0 +1,29 @@
+{{#extend "index"}}
+{{#content "content"}}
+{{#if header}}
+{{{header}}}
+{{else}}}
+Hello, my name is Pavel Nakonechnyy. <i>I'm a web dev, blogger and project manager.</i>
+<ul class="footerlist">
+    <li class="footerlink"><a href="/portfolio">Моё портфолио</a></li>
+</ul>
+{{/if}}
+<h2>Посты</h2>
+<ul>
+    {{#if posts}}
+    {{#each posts}}
+    <li>
+        <a href="/{{url}}">{{title}}</a> <small>{{date}}</small>
+    </li>
+    {{/each}}
+    {{else}}
+    <p>No posts</p>
+    {{/if}}
+    <p>
+        {{#if nextpage}}
+        <a href="/posts/{{nextpage}}">Следующая страница</a>
+        {{/if}}
+    </p>
+</ul>
+{{/content}}
+{{/extend}}
