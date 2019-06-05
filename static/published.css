@@ -309,5 +309,7 @@ html {
   position: fixed;
   top: 0;
   left: 0;
+  font-size: 18pt;
+  text-decoration: none;
   padding: 5px;
 }
