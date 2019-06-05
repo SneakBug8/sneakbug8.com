@@ -9,10 +9,11 @@ Hello, my name is Pavel Nakonechnyy. <i>I'm a web dev, blogger and project manag
 </ul>
 {{/if}}
 <h2>Посты</h2>
-<ul>
+<div class="frontposts">
+<ul class="footerlist clearfix">
     {{#if posts}}
     {{#each posts}}
-    <li>
+    <li class="footerlink">
         <a href="/{{url}}">{{title}}</a>
     </li>
     {{/each}}
@@ -25,5 +26,6 @@ Hello, my name is Pavel Nakonechnyy. <i>I'm a web dev, blogger and project manag
         {{/if}}
     </p>
 </ul>
+</div>
 {{/content}}
 {{/extend}}

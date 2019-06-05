@@ -287,8 +287,17 @@ html {
   }
 }
 
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 .footerlist {
+  display: block;
   list-style: none;
+  clear: both;
+  width: 100%;
 }
 
 .footerlink {
@@ -312,4 +321,16 @@ html {
   font-size: 18pt;
   text-decoration: none;
   padding: 5px;
+}
+
+
+@media only screen and (min-width: 480px) {
+  .frontposts {
+    columns: 2;
+    column-gap: 40px;
+  }
+}
+
+.frontlink {
+  margin: 10px 0;
 }
