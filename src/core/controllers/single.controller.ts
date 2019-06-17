@@ -16,8 +16,8 @@ marked.setOptions({
 export default class SingleController
 {
     constructor(private readonly postService: PostService,
-                private readonly pageService: PageService,
-                private readonly fillerService: FillerService) { }
+        private readonly pageService: PageService,
+        private readonly fillerService: FillerService) { }
 
     @Get(":id")
     async request(@Param("id") id: string, @Res() res: express.Response)
@@ -33,6 +33,7 @@ export default class SingleController
                 image: post.image,
                 description: post.description || null
             }));
+            return;
         }
 
         const page = await this.pageService.GetWithUrl(id);
@@ -43,9 +44,9 @@ export default class SingleController
                 page,
                 description: page.description || null
             }));
+            return;
         }
-        else {
+
         res.render("404");
-        }
     }
 }

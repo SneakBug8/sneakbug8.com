@@ -10,8 +10,8 @@ export default class CmsService
     constructor(private readonly dotenvService: DotenvService)
     {
         this.dotenvService.Init();
-        this.CockpitUrl = process.env.CockpitUrl;
-        this.CockpitToken = process.env.CockpitToken;
+        this.CockpitUrl = process.env.CockpitUrl as string;
+        this.CockpitToken = process.env.CockpitToken as string;
     }
 
     getUrl(url: string)

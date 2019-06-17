@@ -2,7 +2,7 @@ import { Get, Controller, Res } from "@nestjs/common";
 import PageService from "../services/page.service";
 import PostService from "../services/post.service";
 import { Response } from "express";
-import FillerService from "bin/core/services/filler.service";
+import FillerService from "../services/filler.service";
 
 @Controller()
 export default class HomeController
@@ -17,6 +17,11 @@ export default class HomeController
     private async request(@Res() res: Response)
     {
         const header = await this.pageService.GetWithUrl("/");
+
+        if (!header) {
+            res.render("404");
+            return;
+        }
         const posts = await this.postService.LoadPage(1);
 
         let nextpage = null;

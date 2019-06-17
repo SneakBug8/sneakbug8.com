@@ -31,7 +31,7 @@ async function bootstrap()
   app.setBaseViewsDir(path.join(__dirname, "..", templatesPath));
   app.setViewEngine("hbs");
 
-  await app.listen(3000);
+  await app.listen(1010);
 }
 
 configHandlebars();

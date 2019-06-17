@@ -9,10 +9,11 @@ import CmsService from "./services/cms.service";
 import DotenvService from "./services/dotenv.service";
 import FillerService from "./services/filler.service";
 import { RedisService } from "./services/redis.service";
+import { PageController } from "./controllers/page.controller";
 
 @Module({
   imports: [],
-  controllers: [HomeController, SingleController],
+  controllers: [HomeController, SingleController, PageController],
   providers: [CacheService, CmsService, DotenvService, FillerService, PageService, PostService,
     RedisService],
 })
