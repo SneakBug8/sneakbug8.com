@@ -1,19 +1,19 @@
-import cms from "../api/cms";
 import { Injectable } from "@nestjs/common";
+import CmsService from "./cms.service";
 
 @Injectable()
 export default class PageService
 {
     public PagesCollection = "Pages";
 
-    public constructor()
+    public constructor(private readonly cmsService: CmsService)
     {
         this.PagesCollection = process.env.PagesCollection || "Pages";
     }
 
     public async GetWithUrl(url: string)
     {
-        const posts = await cms.collections.getWithParams(this.PagesCollection, {
+        const posts = await this.cmsService.collections.getWithParams(this.PagesCollection, {
             filter: {
                 url
             },
@@ -25,7 +25,7 @@ export default class PageService
         });
 
         if (posts.length) {
-            return posts[0];
+            return posts[0] as Page;
         }
         else {
             return null;

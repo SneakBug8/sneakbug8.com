@@ -1,0 +1,13 @@
+{{#extend "index"}}
+{{#content "content"}}
+<form action="/submitpost" method="post">
+    {{#if showthanks}}
+    <h3>Спасибо за предложенную идею!</h3>
+    {{/if}}
+    <p>Имя: <input type="text" name="name" required></p>
+    <p>Email: <input type="email" name="email" required></p>
+    <p>Тема для поста: <textarea type="text" name="postidea" required></textarea></p>
+    <input type="submit" value="OK">
+</form>
+{{/content}}
+{{/extend}}

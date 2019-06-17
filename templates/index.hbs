@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+	<meta name="referrer" content="origin">
+	<title>{{titlePrefix}} | {{title}}</title>
+	<meta property="og:title" content="{{title}}" />
+	<meta property="og:type" content="website" />
+	{{#if description}}
+	<meta name="description" content="{{description}}">
+	<meta property="og:description" content="{{description}}">
+	{{/if}}
+	{{#if sitename}}
+	<meta property="og:site_name" content="{{sitename}}">
+	{{/if}}
+	{{#if url}}
+	<meta property="og:url" content="{{url}}" />
+	{{/if}}
+	{{#if image}}
+	<meta property="og:image" content="{{image}}" />
+	{{/if}}
+	<link rel="apple-touch-icon" sizes="57x57" href="/fav/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/fav/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/fav/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/fav/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/fav/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/fav/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/fav/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/fav/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/fav/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="/fav/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/fav/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/fav/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/fav/favicon-16x16.png">
+	<link rel="manifest" href="/fav/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/fav/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" type="image/x-icon" sizes="16x16 32x32 64x64" href="/fav/favicon.ico" />
+	<link href="/static/published.css" media="all" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<div class="published-wrap no-ad-size">
+		<div class="wrapper">
+			<div class="app">
+				<div class="note note-detail-markdown">
+					<h1 class="p-name">{{title}}</h1>
+
+					{{#block "content"}}
+					{{/block}}
+					{{{footer.content}}}
+				</div><!-- .note -->
+			</div><!-- .app -->
+		</div>
+	</div>
+	{{#unless hidehomelink}}
+	<a class="homelink" href="/">&larr; 🏠</a>
+	{{/unless}}
+</body>
+
+<script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101188856);</script>
+<script async src="//static.getclicky.com/js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-140928369-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-140928369-1');
+</script>
+
+{{#block "footer"}}
+{{/block}}
+
+</html>

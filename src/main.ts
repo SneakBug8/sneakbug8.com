@@ -1,14 +1,38 @@
 import { NestFactory } from "@nestjs/core";
+import { NestExpressApplication } from "@nestjs/platform-express";
+
 import { CoreModule } from "./core/core.module";
 
-import * as dotenv from "dotenv";
-dotenv.config();
+import * as path from "path";
 
-console.log(process.env);
+import layouts = require("handlebars-layouts");
+import hbs = require("hbs");
 
-async function bootstrap() {
-  const app = await NestFactory.create(CoreModule);
+function configHandlebars()
+{
+  hbs.registerHelper(layouts(hbs.handlebars));
+
+  const templatesPath = process.env.templatesPath || "templates";
+
+  hbs.registerPartials(__dirname + "/../" + templatesPath);
+}
+
+async function bootstrap()
+{
+  const app = await NestFactory.create<NestExpressApplication>(CoreModule);
+
+  const templatesPath = process.env.templatesPath as string;
+
+  app.useStaticAssets(path.join(__dirname, "..", "root"));
+  app.useStaticAssets(path.join(__dirname, "..", "static"), {
+    prefix: "/static"
+  });
+
+  app.setBaseViewsDir(path.join(__dirname, "..", templatesPath));
+  app.setViewEngine("hbs");
+
   await app.listen(3000);
 }
 
+configHandlebars();
 bootstrap();

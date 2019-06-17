@@ -1,10 +1,10 @@
-import cms from "../api/cms";
 import { Injectable } from "@nestjs/common";
+import CmsService from "./cms.service";
 
 @Injectable()
 export default class PostService
 {
-    public constructor()
+    public constructor(private readonly cmsService: CmsService)
     {
         this.PostsCollection = process.env.PostsCollection as string;
     }
@@ -13,7 +13,7 @@ export default class PostService
 
     public async GetWithUrl(url: string)
     {
-        const posts = await cms.collections.getWithParams(this.PostsCollection, {
+        const posts = await this.cmsService.collections.getWithParams(this.PostsCollection, {
             filter: {
                 url,
             },
@@ -36,7 +36,7 @@ export default class PostService
 
     public async LoadPage(page: number)
     {
-        const posts = await cms.collections.getWithParams(this.PostsCollection, {
+        const posts = await this.cmsService.collections.getWithParams(this.PostsCollection, {
             sort: {
                 date: -1,
                 _created: -1
@@ -61,7 +61,8 @@ export default class PostService
     }
 }
 
-export interface Post {
+export interface Post
+{
     title: string;
     url: string;
     content: string;
