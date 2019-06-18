@@ -1,7 +1,7 @@
 import { Controller, Get, Param, Res } from "@nestjs/common";
 import { Response } from "express";
-import PostService from "../services/post.service";
-import FillerService from "../services/filler.service";
+import PostService from "../../core/services/post.service";
+import FillerService from "../../core/services/filler.service";
 
 @Controller()
 export class PageController

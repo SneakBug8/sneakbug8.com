@@ -1,8 +1,8 @@
 import * as express from "express";
 import { Get, Param, Controller, Res } from "@nestjs/common";
-import PostService from "../services/post.service";
-import PageService from "../services/page.service";
-import FillerService from "../services/filler.service";
+import PostService from "../../core/services/post.service";
+import PageService from "../../core/services/page.service";
+import FillerService from "../../core/services/filler.service";
 
 import marked = require("marked");
 marked.setOptions({
