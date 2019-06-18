@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+	<meta name="referrer" content="origin">
+	<title>{{titlePrefix}} | {{title}}</title>
+	<meta property="og:title" content="{{title}}" />
+	<meta property="og:type" content="website" />
+	{{#if description}}
+	<meta name="description" content="{{description}}">
+	<meta property="og:description" content="{{description}}">
+	{{/if}}
+	{{#if sitename}}
+	<meta property="og:site_name" content="{{sitename}}">
+	{{/if}}
+	{{#if url}}
+	<meta property="og:url" content="{{url}}" />
+	{{/if}}
+	{{#if image}}
+	<meta property="og:image" content="{{image}}" />
+	{{/if}}
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" type="image/x-icon" sizes="16x16 32x32 64x64" href="/favicon.ico" />
+	<link href="/static/published.css" media="all" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<div class="published-wrap no-ad-size">
+		<div class="wrapper">
+			<div class="app">
+				<div class="note note-detail-markdown">
+					<h1 class="p-name">{{title}}</h1>
+
+					{{#block "content"}}
+					{{/block}}
+					{{{footer.content}}}
+				</div><!-- .note -->
+
+
+			</div><!-- .app -->
+		</div>
+</body>
+
+<script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101187277);</script>
+<script async src="//static.getclicky.com/js"></script>
+
+</html>

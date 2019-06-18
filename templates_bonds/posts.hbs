@@ -1,0 +1,25 @@
+{{#extend "index"}}
+{{#content "content"}}
+<h2>Посты</h2>
+<ul>
+    {{#if posts}}
+    {{#each posts}}
+    <li>
+        <a href="/{{url}}">{{title}}</a> <small>{{date}}</small>
+    </li>
+    {{/each}}
+    {{else}}
+    <p>No posts</p>
+    {{/if}}
+</ul>
+<p>
+    {{#if prevpage}}
+    <a href="/posts/{{prevpage}}">Предыдущая страница</a>
+    {{/if}}
+    {{#if nextpage}}
+    <a href="/posts/{{nextpage}}">Следующая страница</a>
+    {{/if}}
+    <br><a href="/">&larr; На главную</a>
+</p>
+{{/content}}
+{{/extend}}

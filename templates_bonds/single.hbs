@@ -1,0 +1,8 @@
+{{#extend "index"}}
+{{#content "content"}}
+<div class="h-entry">
+  {{{post.content}}}
+</div>
+<p><a href="/">&larr; На главную</a> {{#if post.date}}<i>Опубликовано {{post.date}}</i>{{/if}}</p>
+{{/content}}
+{{/extend}}
