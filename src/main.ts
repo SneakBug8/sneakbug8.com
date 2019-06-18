@@ -1,7 +1,7 @@
 import { NestFactory } from "@nestjs/core";
 import { NestExpressApplication } from "@nestjs/platform-express";
 
-import { CoreModule } from "./core/core.module";
+import { AppModule } from "./app.module";
 
 import * as path from "path";
 
@@ -19,7 +19,7 @@ function configHandlebars()
 
 async function bootstrap()
 {
-  const app = await NestFactory.create<NestExpressApplication>(CoreModule);
+  const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
   const templatesPath = process.env.templatesPath as string;
 

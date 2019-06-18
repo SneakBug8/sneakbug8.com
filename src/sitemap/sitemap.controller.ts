@@ -8,7 +8,7 @@ export default class SitemapController
     {
     }
 
-    @Get("/sitemap.xml")
+    @Get("sitemap.xml")
     private async request()
     {
         return this.sitemapService.getXml();

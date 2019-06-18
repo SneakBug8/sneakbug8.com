@@ -3,6 +3,6 @@ import { ViewsModule } from "./views/views.module";
 import { SitemapModule } from "./sitemap/sitemap.module";
 
 @Module({
-  imports: [ViewsModule, SitemapModule]
+  imports: [SitemapModule, ViewsModule, ]
 })
 export class AppModule {}

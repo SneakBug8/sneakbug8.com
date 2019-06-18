@@ -16,8 +16,8 @@ declare module "sitemap" {
 declare class SitemapEntry
 {
     url: string;
-    changefreq: string;
-    priority: number;
+    changefreq: string | undefined;
+    priority: number | undefined;
 }
 
 declare class Sitemap
