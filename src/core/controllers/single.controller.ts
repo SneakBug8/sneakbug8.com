@@ -39,6 +39,8 @@ export default class SingleController
         const page = await this.pageService.GetWithUrl(id);
 
         if (page) {
+            page.content = marked.parse(page.content);
+
             res.render("page", await this.fillerService.Fill({
                 title: page.title,
                 page,

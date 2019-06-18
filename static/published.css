@@ -1,16 +1,11 @@
 @charset "UTF-8";
 
-/* CSS compiled from SCSS - Do not edit .css directly.  Styles © Simperium  */
 html {
   font-family: 'Open Sans', sans-serif;
 }
 
 .published-wrap {
   margin: 0 auto;
-}
-
-.published-wrap.ad-size {
-  max-width: 971px;
 }
 
 .published-wrap.no-ad-size {
@@ -20,40 +15,6 @@ html {
 .published-wrap img {
   max-width: 100%;
   height: auto;
-}
-
-.published-top {
-  color: #333333;
-  font-size: 14px;
-  text-align: center;
-  padding: 12px 10px 100px;
-}
-
-.published-top a,
-.published-top a:link,
-.published-top a:visited {
-  color: #333333;
-  border-bottom: none;
-  font-weight: normal;
-  text-decoration: none;
-}
-
-.logo {
-  background: url(/img/logo.png) no-repeat left top;
-  background-size: 18px;
-  padding: 0px 0 9px 25px;
-  margin: -9px 0;
-}
-
-@media print,
-(-o-min-device-pixel-ratio: 5 / 4),
-(-webkit-min-device-pixel-ratio: 1.25),
-(min-resolution: 120dpi),
-(min-width: 600px) {
-  .logo {
-    background: url(/img/logo@2x.png) no-repeat left top;
-    background-size: 18px;
-  }
 }
 
 .wrapper {
@@ -66,10 +27,6 @@ html {
   font-size: 18px;
   line-height: 1.6em;
   min-height: 440px;
-}
-
-.ad-size .note {
-  margin-left: 139px;
 }
 
 #published_footer {
@@ -144,11 +101,6 @@ html {
   text-transform: uppercase;
 }
 
-.note-detail-markdown #title {
-  margin-bottom: 0.5em;
-  font-weight: bold;
-}
-
 .note-detail-markdown p,
 .note-detail-markdown ul,
 .note-detail-markdown ol,
@@ -157,7 +109,6 @@ html {
 .note-detail-markdown table,
 .note-detail-markdown img {
   margin-bottom: 1.7em;
-  box-sizing: border-box;
 }
 
 .note-detail-markdown img {
@@ -165,10 +116,6 @@ html {
   margin: 0 auto;
   max-width: 100%;
   height: auto;
-}
-
-.note-detail-markdown a {
-  color: #4895d9;
 }
 
 .note-detail-markdown hr {
@@ -246,27 +193,6 @@ html {
   font-weight: 600;
 }
 
-.note-detail-markdown li.checklist-item {
-  list-style: none;
-  margin-left: -40px;
-}
-
-.note-detail-markdown span.task-list-item-unchecked {
-  background-image: url(/img/circle.svg);
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 24px;
-  padding-left: 28px;
-}
-
-.note-detail-markdown span.task-list-item-checked {
-  background-image: url(/img/checkmark.svg);
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 24px;
-  padding-left: 28px;
-}
-
 @media only screen and (max-width: 480px) {
   .note-detail-markdown {
     font-size: 16px;
@@ -324,7 +250,7 @@ html {
 }
 
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 576px) {
   .frontposts {
     columns: 2;
     column-gap: 40px;
@@ -334,38 +260,4 @@ html {
 .frontwrapper {
   display: table;
   margin: 10px 0;
-}
-
-.frontcolorblock {
-  display: inline-block;
-  background-color: blueviolet;
-  width: 15px;
-  height: 15px;
-}
-
-input[type=text], input[type=email], textarea {
-  padding:5px;
-  border:2px solid #ccc;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-}
-
-input[type=text]:focus, input[type=email]:focus, textarea:focus {
-  border-color:#333;
-}
-
-.button, input[type=submit] {
-  background-color: #4895d9;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
-
-.button:hover, input[type=submit]:hover {
-  background-color: #3a79af;
-  cursor: pointer;
 }

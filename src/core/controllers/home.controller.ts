@@ -13,7 +13,7 @@ export default class HomeController
     {
     }
 
-    @Get()
+    @Get("/")
     private async request(@Res() res: Response)
     {
         const header = await this.pageService.GetWithUrl("/");
