@@ -11,7 +11,6 @@ marked.setOptions({
     smartypants: true
 });
 
-
 @Controller()
 export default class SingleController
 {

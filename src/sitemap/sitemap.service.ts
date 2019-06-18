@@ -10,6 +10,7 @@ export default class SitemapService
     {
         // Creates a sitemap object given the input configuration with URLs
         this.sitemap = sm.createSitemap({});
+        this.createSitemap();
     }
 
     async createSitemap()
