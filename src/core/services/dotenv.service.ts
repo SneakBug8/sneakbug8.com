@@ -1,11 +1,12 @@
-import * as dotenv from "dotenv";
 import { Injectable } from "@nestjs/common";
+import * as dotenv from "dotenv";
 
 @Injectable()
 export default class DotenvService
 {
-    public Init()
+    public config: any;
+    constructor()
     {
-        dotenv.config();
+        this.config = dotenv.config().parsed;
     }
 }

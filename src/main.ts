@@ -8,11 +8,23 @@ import * as path from "path";
 import layouts = require("handlebars-layouts");
 import hbs = require("hbs");
 
-function configHandlebars()
+import * as dotenv from "dotenv";
+
+function sleep(ms: number)
+{
+  return new Promise((resolve) =>
+  {
+    setTimeout(resolve, ms);
+  });
+}
+
+const config = dotenv.config().parsed as any;
+
+function configureHandlebars()
 {
   hbs.registerHelper(layouts(hbs.handlebars));
 
-  const templatesPath = process.env.templatesPath || "templates";
+  const templatesPath = config.templatesPath || "templates";
 
   hbs.registerPartials(__dirname + "/../" + templatesPath);
 }
@@ -21,7 +33,7 @@ async function bootstrap()
 {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
-  const templatesPath = process.env.templatesPath as string;
+  const templatesPath = config.templatesPath || "templates";
 
   app.useStaticAssets(path.join(__dirname, "..", "root"));
   app.useStaticAssets(path.join(__dirname, "..", "static"), {
@@ -31,8 +43,8 @@ async function bootstrap()
   app.setBaseViewsDir(path.join(__dirname, "..", templatesPath));
   app.setViewEngine("hbs");
 
-  await app.listen(1010);
+  await app.listen(config.port);
 }
 
-configHandlebars();
+configureHandlebars();
 bootstrap();
