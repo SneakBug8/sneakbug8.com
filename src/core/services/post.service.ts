@@ -1,10 +1,18 @@
 import { Injectable } from "@nestjs/common";
 import CmsService from "./cms.service";
 
+import marked = require("marked");
+import FillerService from "./filler.service";
+marked.setOptions({
+    gfm: true,
+    langPrefix: "",
+    smartypants: true
+});
+
 @Injectable()
 export default class PostService
 {
-    public constructor(private readonly cmsService: CmsService)
+    public constructor(private readonly cmsService: CmsService, private readonly fillerService: FillerService)
     {
         this.PostsCollection = process.env.PostsCollection as string;
     }
@@ -27,7 +35,9 @@ export default class PostService
         });
 
         if (posts.length) {
-            return posts[0] as Post;
+            const post = posts[0] as Post;
+            post.content = marked.parse(post.content);
+            return post;
         }
         else {
             return null;
@@ -58,6 +68,15 @@ export default class PostService
         } else {
             return null;
         }
+    }
+
+    public async GetRenderData(post: Post)
+    {
+        return await this.fillerService.Fill({
+            title: post.title,
+            post,
+            description: post.description || null
+        });
     }
 }
 

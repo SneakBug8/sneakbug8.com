@@ -4,13 +4,6 @@ import PostService from "../../core/services/post.service";
 import PageService from "../../core/services/page.service";
 import FillerService from "../../core/services/filler.service";
 
-import marked = require("marked");
-marked.setOptions({
-    gfm: true,
-    langPrefix: "",
-    smartypants: true
-});
-
 @Controller()
 export default class SingleController
 {
@@ -24,30 +17,29 @@ export default class SingleController
         const post = await this.postService.GetWithUrl(id);
 
         if (post) {
-            post.content = marked.parse(post.content);
-
-            res.render("single", await this.fillerService.Fill({
-                title: post.title,
-                post,
-                image: post.image,
-                description: post.description || null
-            }));
+            res.render("single", await this.postService.GetRenderData(post));
             return;
         }
 
         const page = await this.pageService.GetWithUrl(id);
 
         if (page) {
-            page.content = marked.parse(page.content);
-
-            res.render("page", await this.fillerService.Fill({
-                title: page.title,
-                page,
-                description: page.description || null
-            }));
+            res.render("page", await this.pageService.GetRenderData(page));
             return;
         }
 
-        res.render("404");
+        const page404 = await this.pageService.GetWithUrl("404");
+
+        if (page404) {
+            res.status(404).render("page", await this.pageService.GetRenderData(page404));
+            return;
+        }
+        else {
+            res.status(404).render("404", await this.fillerService.Fill({
+                title: "404: Not found",
+                description: "No such page on this website"
+            }));
+            return;
+        }
     }
 }

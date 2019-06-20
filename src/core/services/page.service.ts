@@ -1,19 +1,27 @@
 import { Injectable } from "@nestjs/common";
 import CmsService from "./cms.service";
 
+import marked = require("marked");
+import FillerService from "./filler.service";
+marked.setOptions({
+    gfm: true,
+    langPrefix: "",
+    smartypants: true
+});
+
 @Injectable()
 export default class PageService
 {
     public PagesCollection = "Pages";
 
-    public constructor(private readonly cmsService: CmsService)
+    public constructor(private readonly cmsService: CmsService, private readonly fillerService: FillerService)
     {
         this.PagesCollection = process.env.PagesCollection || "Pages";
     }
 
     public async GetWithUrl(url: string)
     {
-        const posts = await this.cmsService.collections.getWithParams(this.PagesCollection, {
+        const pages = await this.cmsService.collections.getWithParams(this.PagesCollection, {
             filter: {
                 url
             },
@@ -24,12 +32,23 @@ export default class PageService
             }
         });
 
-        if (posts.length) {
-            return posts[0] as Page;
+        if (pages.length) {
+            const page = pages[0] as Page;
+            page.content = marked.parse(page.content);
+            return page;
         }
         else {
             return null;
         }
+    }
+
+    public async GetRenderData(page: Page)
+    {
+        return await this.fillerService.Fill({
+            title: page.title,
+            page,
+            description: page.description || null
+        });
     }
 }
 
