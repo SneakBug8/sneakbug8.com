@@ -118,6 +118,15 @@ html {
   height: auto;
 }
 
+.note-detail-markdown a {
+  color: #4895d9;
+}
+
+.note-detail-markdown a:hover {
+  color: #2e89d8;
+  text-decoration: none;
+}
+
 .note-detail-markdown hr {
   border: 0;
   margin: 3.4em 0;
@@ -260,4 +269,22 @@ html {
 .frontwrapper {
   display: table;
   margin: 10px 0;
+}
+
+a.btn {
+  padding: 10px;
+  background-color: #4895d9;
+  color: #f6f7f8;
+  text-decoration: none;
+}
+
+a.btn:hover {
+  background-color: #2e89d8;
+  color: #f6f7f8;
+}
+
+.card {
+  border: 1px solid #616870;
+  border-radius: 5px;
+  padding: 10px;
 }
