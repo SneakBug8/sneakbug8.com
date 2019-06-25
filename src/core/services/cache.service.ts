@@ -1,14 +1,15 @@
 import { Injectable } from "@nestjs/common";
 import { RedisService } from "./redis.service";
+import DotenvService from "./dotenv.service";
 
 @Injectable()
-export default class CacheModule
+export default class CacheService
 {
     public CacheKey = "cache";
 
-    public constructor(private readonly redisService: RedisService)
+    public constructor(private readonly redisService: RedisService, private readonly dotenvService: DotenvService)
     {
-        this.CacheKey = process.env.CacheKey as string;
+        this.CacheKey = dotenvService.config.CacheKey || this.CacheKey;
     }
 
     public async get(key: string)

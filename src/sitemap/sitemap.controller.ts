@@ -1,5 +1,6 @@
 import { Get, Controller, Res } from "@nestjs/common";
 import SitemapService from "./sitemap.service";
+import { Response } from "express";
 
 @Controller()
 export default class SitemapController
@@ -9,8 +10,8 @@ export default class SitemapController
     }
 
     @Get("sitemap.xml")
-    private async request()
+    private async request(@Res() res: Response)
     {
-        return this.sitemapService.getXml();
+        res.header("Content-Type", "text/xml").send(this.sitemapService.getXml());
     }
 }
