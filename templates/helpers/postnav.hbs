@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-sm-12 col-md-6">
+    {{#if previous}}
+    <a href="/{{previous.url}}">&larr; Предыдущее: {{previous.title}}</a>
+    {{/if}}
+  </div>
+  <div class="col-sm-12 col-md-6">
+    {{#if next}}
+    <a href="/{{next.url}}" style="float:right; text-align:right;">Следующее: {{next.title}} &rarr;</a>
+    {{/if}}
+  </div>
+</div>

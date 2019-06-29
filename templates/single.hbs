@@ -2,24 +2,28 @@
 {{#content "content"}}
 <div class="h-entry">
   {{{post.content}}}
+
+  <p>
+    {{#if post.date}}<i>Опубликовано {{post.date}}</i>{{/if}}
+    <div id="vk_like"></div>
+  </p>
 </div>
-<p>
-  <!-- Put this script tag to the <head> of your page -->
-  <script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
+<script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
+<hr>
+{{#> helpers/postnav}}
+{{/helpers/postnav}}
 
-  <script type="text/javascript">
-    VK.init({ apiId: 7003744, onlyWidgets: true });
-  </script>
-
-  <!-- Put this div tag to the place, where the Like block will be -->
-  <div id="vk_like"></div>
-  <script type="text/javascript">
-    VK.Widgets.Like("vk_like", { type: "button", height: 30 });
-  </script>
-</p>
-<p><a href="/">&larr; На главную</a> {{#if post.date}}<i>Опубликовано {{post.date}}</i>{{/if}}</p>
+<div class="row">
+  <div class="col-12">
+    <a style="display: block; text-align: center;" href="/">На главную</a>
+  </div>
+</div>
 {{/content}}
 {{#content "footer"}}
+<script type="text/javascript">
+  VK.init({ apiId: 7003744, onlyWidgets: true });
+  VK.Widgets.Like("vk_like", { type: "button", height: 30 });
+</script>
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/vs.min.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
 <script async>hljs.initHighlightingOnLoad();</script>

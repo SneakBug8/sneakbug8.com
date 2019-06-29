@@ -10,6 +10,9 @@ import hbs = require("hbs");
 
 import * as dotenv from "dotenv";
 
+import minify = require("express-minify");
+import compression = require("compression");
+
 function sleep(ms: number)
 {
   return new Promise((resolve) =>
@@ -42,6 +45,9 @@ async function bootstrap()
 
   app.setBaseViewsDir(path.join(__dirname, "..", templatesPath));
   app.setViewEngine("hbs");
+
+  app.use(compression());
+  app.use(minify());
 
   await app.listen(config.port);
 }

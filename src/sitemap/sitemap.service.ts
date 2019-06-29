@@ -13,6 +13,7 @@ export default class SitemapService
             hostname: "https://sneakbug8.com",
             cacheTime: 600000
         });
+
         this.createSitemap();
     }
 

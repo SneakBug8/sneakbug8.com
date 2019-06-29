@@ -30,7 +30,9 @@ export default class PostService
                 date: 1,
                 content: 1,
                 description: 1,
-                image: 1
+                image: 1,
+                nextlink: 1,
+                prevlink: 1
             }
         });
 
@@ -70,12 +72,45 @@ export default class PostService
         }
     }
 
+    private async GetTitle(url: string)
+    {
+        const posts = await this.cmsService.collections.getWithParams(this.PostsCollection, {
+            filter: {
+                url,
+            },
+            fields: {
+                title: 1,
+                url: 1
+            }
+        });
+
+        if (posts.length) {
+            const post = posts[0] as Post;
+            return post;
+        }
+        else {
+            return null;
+        }
+    }
+
     public async GetRenderData(post: Post)
     {
+        let previous = null;
+        if (post.prevlink) {
+            previous = await this.GetTitle(post.prevlink);
+            post.prevlink = null;
+        }
+        let next = null;
+        if (post.nextlink) {
+            next = await this.GetTitle(post.nextlink);
+            post.nextlink = null;
+        }
         return await this.fillerService.Fill({
             title: post.title,
             post,
-            description: post.description || null
+            description: post.description || null,
+            previous,
+            next
         });
     }
 }
@@ -89,4 +124,6 @@ export interface Post
     hide: boolean;
     description: string | null;
     image: string | null;
+    prevlink: string | null;
+    nextlink: string | null;
 }

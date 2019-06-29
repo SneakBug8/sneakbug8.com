@@ -14,7 +14,7 @@ export default class SingleController
     @Get(":id")
     async request(@Param("id") id: string, @Res() res: express.Response)
     {
-        const post = await this.postService.GetWithUrl(id);
+        /* const post = await this.postService.GetWithUrl(id);
 
         if (post) {
             res.render("single", await this.postService.GetRenderData(post));
@@ -26,7 +26,7 @@ export default class SingleController
         if (page) {
             res.render("page", await this.pageService.GetRenderData(page));
             return;
-        }
+        } */
 
         const page404 = await this.pageService.GetWithUrl("404");
 

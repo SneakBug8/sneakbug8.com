@@ -1,6 +1,23 @@
 @charset "UTF-8";
 
+* {
+  box-sizing: border-box;
+}
+
 html {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+#title,
+.frontlink,
+.btn,
+.lead {
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -54,7 +71,6 @@ html {
 
 .note-detail-markdown {
   user-select: auto;
-  font-family: 'Open Sans', sans-serif;
   font-size: 18px;
   line-height: 1.7;
   word-wrap: break-word;
@@ -69,7 +85,6 @@ html {
 .note-detail-markdown #title {
   clear: both;
   line-height: 1.15;
-  font-family: 'Ubuntu', sans-serif;
   margin: 1.7em 0 1em 0;
 }
 
@@ -101,6 +116,11 @@ html {
   text-transform: uppercase;
 }
 
+p.lead {
+  font-size: 1.2em;
+  color: #616870;
+}
+
 .note-detail-markdown p,
 .note-detail-markdown ul,
 .note-detail-markdown ol,
@@ -120,11 +140,11 @@ html {
 
 .note-detail-markdown a {
   color: #4895d9;
+  transition: color .3s ease;
 }
 
 .note-detail-markdown a:hover {
-  color: #2e89d8;
-  text-decoration: none;
+  color: #d82e2e;
 }
 
 .note-detail-markdown hr {
@@ -132,6 +152,12 @@ html {
   margin: 3.4em 0;
   color: #4895d9;
   height: 1em;
+  transition: color .3s ease;
+}
+
+
+.note-detail-markdown hr:hover {
+  color: #d82e2e;
 }
 
 .note-detail-markdown hr:before {
@@ -256,6 +282,16 @@ html {
   font-size: 18pt;
   text-decoration: none;
   padding: 5px;
+  transition: font-size .3s ease, color .3s ease, background-color .3s ease;
+}
+
+.homelink:hover:not(.hide) {
+  font-size: 24pt;
+}
+
+.homelink.hide {
+  color: transparent;
+  background-color: transparent;
 }
 
 
@@ -271,20 +307,44 @@ html {
   margin: 10px 0;
 }
 
-a.btn {
-  padding: 10px;
-  background-color: #4895d9;
-  color: #f6f7f8;
+.frontlink a {
   text-decoration: none;
 }
 
+a.btn {
+  display: inline-block;
+  padding: 10px;
+  margin: 2px;
+  background-color: #4895d9;
+  color: #f6f7f8;
+  text-decoration: none;
+  transition: background-color .3s ease;
+}
+
 a.btn:hover {
-  background-color: #2e89d8;
+  background-color: #d82e2e;
   color: #f6f7f8;
 }
 
 .card {
-  border: 1px solid #616870;
+  border: 1px solid #4895d9;
   border-radius: 5px;
   padding: 10px;
+  transition: border-color .3s ease;
+}
+
+.card:hover {
+  border-color: #d82e2e;
+}
+
+.color-primary {
+  color: #4895d9;
+}
+
+.color-secondary {
+  color: #d82e2e;
+}
+
+.color-mute {
+  color: #616870;
 }
