@@ -319,15 +319,28 @@ a.btn {
   display: inline-block;
   padding: 10px;
   margin: 2px;
+  text-decoration: none;
+}
+
+a.btn:not(.btn-outline) {
   background-color: #4895d9;
   color: #f6f7f8;
-  text-decoration: none;
   transition: background-color .3s ease;
 }
 
-a.btn:hover {
+a.btn:not(.btn-outline):hover {
   background-color: #d82e2e;
   color: #f6f7f8;
+}
+
+a.btn.btn-outline {
+  background-color: transparent;
+  border: 1px solid #4895d9;
+  transition: border-color .3s ease;
+}
+
+a.btn.btn-outline:hover {
+  border-color: #d82e2e;
 }
 
 .card {

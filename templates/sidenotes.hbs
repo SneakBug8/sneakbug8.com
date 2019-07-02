@@ -1,0 +1,18 @@
+{{#extend "index"}}
+{{#content "content"}}
+{{#if notes}}
+    |&nbsp;
+    {{#each notes}}
+    <a href="/sidenotes/{{url}}">{{title}}</a>&nbsp;|&nbsp;
+    {{/each}}
+{{else}}
+<p>Нет заметок</p>
+{{/if}}
+<hr>
+<div class="row">
+    <div class="col-12">
+        <a style="display: block; text-align: center;" href="/">На главную</a>
+    </div>
+</div>
+{{/content}}
+{{/extend}}

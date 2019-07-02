@@ -1145,13 +1145,13 @@
         "version": "7722330596721a66cb7a318f46b1f517435014eb5b3fe6ace3ff863ba3841744",
         "signature": "f5e4c8adbbd4d69810603410862cdf3fd8cd636d6502bc1dd9b2a4785adb6907"
       },
-      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/controllers/single.controller.ts": {
-        "version": "7ea07ef08e4100c78bd0a32eff674cb1c88e6198fe108cedb86111de094c5ddb",
-        "signature": "c3d456b1adda80c5ff9717d42b580aad4f86c8ae9d2fe9ad69dc42c7765ce547"
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/404/notfound.service.ts": {
+        "version": "e18eeed2db75b2bb49f9638386f2a868ea22d0e7f06adbd8761ba53ab818f6da",
+        "signature": "e2a99ca23c85146a59b92ea5d782bb9e3a341ebffcfcd77afe32535e95ea81fb"
       },
-      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/controllers/page.controller.ts": {
-        "version": "421b951fe5017cdb274cb4842e29ee7ad150cb30a5ed7178c3c467b882863387",
-        "signature": "e652deb5b3888f750008fb23d9a244d1c0881cbd83250c5379c0cc23cc7f5e5e"
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/controllers/posts.controller.ts": {
+        "version": "e1b15e5a4324ea61187f43c0dd7962741b484d135d19d760dbab695118b928b0",
+        "signature": "88f9ed48ae4ac3ce3e882f701f39f846775d52136d65d3ac8847138056d424bf"
       },
       "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/preloader.service.ts": {
         "version": "5c704819c2f69654fab74e8c0d4209985f5a82fae1e5209078f28ae88e50d4c1",
@@ -1162,15 +1162,15 @@
         "signature": "994c9d7b726bd25178469ef71fa4cb0789a11c968d0398146d88fc92ec40f9b1"
       },
       "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/middlewares/page.middleware.ts": {
-        "version": "b8237283ab71878f1092713e253018cb359efe76867ed8d5b59a68438ad9c0dc",
+        "version": "5f5b80d1fb84df96217746456b59d536bb353a5b2a0d44b9d5a667780e771a54",
         "signature": "dc7701ea00675768d9e1b07bdcb304bd28a26f814ce6bb5488e16b52fbe4f543"
       },
       "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/middlewares/post.middleware.ts": {
-        "version": "02ac52aee583030335abb8f33fcee5abe47108755e558e1a9618b07f05f34dd3",
+        "version": "b292cf096b587a3003f490e4b873522e7f57890222bf5add90358ae476bd99fe",
         "signature": "9e64152711b28f83406e2fb312cf482ed754845ced001eca4fb155c8482b928d"
       },
       "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/views.module.ts": {
-        "version": "021cb31a277627fea09c5718f7a293296eefa7054a645033e460334e539abf4d",
+        "version": "25d8113f29380f3ddd7db41deb894341f2dbd01ee934b08841ce594cd0928c47",
         "signature": "ba50a8832d9684e919b5e6c27fe22790ddc875e596b2357be8400dbbac188dcc"
       },
       "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/sitemap/sitemap.service.ts": {
@@ -1186,27 +1186,39 @@
         "signature": "48f4814106aca9ba740da7cb8e586d24bc657e6780b3de0b409d9da18487c23c"
       },
       "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/nest/nestpage.service.ts": {
-        "version": "2fe1f88844eb97e3b6e6556afd3f555a5effabd9610455d63709820bc6ef77d9",
-        "signature": "aaff3e24760a0f79717995f1f7605c607f730eecafc8c80c634f0d380531d47c"
+        "version": "e4d9788cadf6b4f92e4dc0edd78e4ab0e5c1bd7966dd8528b4fc1c25194b2308",
+        "signature": "07638b8147296f4b9bd01432ec209df322c1e326dd733108b363a4a16a2879f0"
       },
       "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/nest/nest.controller.ts": {
-        "version": "24300f2016c73e8797c0b07a0a850f774b43ed20469ec50daff3cc5487301157",
-        "signature": "290bfbd79ff5749e5a60e56833f2a19ac8a260028caf7ead089eb77181928b6a"
+        "version": "f38818f7a2c566680b7855d1fd1c4d6736be2936609f3eec72865291b3826afd",
+        "signature": "2cc63ef60c31abc18f73cb56cb5b4b35111b2233d770ef888409fe1ef0ff44b1"
       },
       "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/nest/nest.module.ts": {
         "version": "908fcc2232863ef1cf8f5aa9dcb71938f2add0f5342429723dbca9c78500bf26",
         "signature": "9aabe8afb41d584caaf2bf3e3633dc5069337addb89aec49e51d7f3943cdc725"
       },
-      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/404/404.controller.ts": {
-        "version": "e8597056975da79ed123e3d0c6dbdd7d2e0c779d437ba707f7ebc52317df688b",
-        "signature": "1eadf8eca1e769f6a84bda0aa9a6392e655e68f4b259795af42b4f30962d7752"
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/404/notfound.controller.ts": {
+        "version": "32445e15d0ad2adb7e8fb7f875e2704c3abb0187a800d5ede855e359a70916d4",
+        "signature": "75c655134e1fbdc3870c00ee015b8c8bd8a2e8ebac914c9d278539e6f57876a2"
       },
-      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/404/404.module.ts": {
-        "version": "c61aa6f12f317c5ab0d3134772f5bc00981a3af56c63ba5eaa90ed706cf7997a",
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/404/notfound.module.ts": {
+        "version": "85e01aea4a3d971398c19872d5b8d0e01fa9e4b72c11b91331d40fcbf79fbb52",
         "signature": "54ef93f5f0d123ad58b53ab5019edb3d2b57f43516a1d50035494377ba3a0eb0"
       },
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/sidenotes/sidenotes.service.ts": {
+        "version": "57b3f81fbcdf48ac1b49f422a83eca67cc60fbf44ebec640e62ff7d3b353cb03",
+        "signature": "b0d735b5d1320f013ec1173c3ff3de103619bfc4914f081494177359e1348f3b"
+      },
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/sidenotes/sidenotes.controller.ts": {
+        "version": "589ea0b1d68d2cf8a0ddf70300810db4c74eed4157405ea07738d7f930c983fd",
+        "signature": "ad977f5bcafa3fe67f9df103cd090e4aeff4a9c857037c26ade6a1f7e45d7b72"
+      },
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/sidenotes/sidenotes.module.ts": {
+        "version": "f1ec21ae52f34fec37bfc9342609431dced53463ca6eabe66e14f70c23f55202",
+        "signature": "350f4d614609a71ba6528f9560a112568aebb1f673d66cec99b30a3526ff64a6"
+      },
       "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/app.module.ts": {
-        "version": "cec4133cc3f1bd0f6a27c8417902eaa662e685ae2d5940dc64adcd7f03541cd2",
+        "version": "072b65669a2d3b7be73b2ecdccae8b74ab1e45c410f36454f83f33e5e2d87886",
         "signature": "9fc7f7b6ad854404973b8cba8e6d883f758237991968e9a3965d716d46f1da88"
       },
       "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@nestjs/core/adapters/http-adapter.d.ts": {
@@ -3134,20 +3146,22 @@
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/node/util.d.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/controllers/single.controller.ts": [
-        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/express/index.d.ts",
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/404/notfound.service.ts": [
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@nestjs/common/index.d.ts",
-        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/post.service.ts",
-        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/page.service.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/marked/index.d.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/filler.service.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/page.service.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/express/index.d.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/node/util.d.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/controllers/page.controller.ts": [
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/controllers/posts.controller.ts": [
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@nestjs/common/index.d.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/express/index.d.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/post.service.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/filler.service.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/page.service.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/404/notfound.service.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/node/util.d.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -3191,8 +3205,7 @@
       "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/views.module.ts": [
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@nestjs/common/index.d.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/controllers/home.controller.ts",
-        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/controllers/single.controller.ts",
-        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/controllers/page.controller.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/controllers/posts.controller.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/core.module.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/middlewares/page.middleware.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/middlewares/post.middleware.ts",
@@ -3236,6 +3249,7 @@
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/nest/nestpage.service.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/page.service.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/filler.service.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/404/notfound.service.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/node/util.d.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -3247,18 +3261,44 @@
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/node/util.d.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/404/404.controller.ts": [
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/404/notfound.controller.ts": [
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/express/index.d.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@nestjs/common/index.d.ts",
-        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/page.service.ts",
-        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/filler.service.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/404/notfound.service.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/node/util.d.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/404/404.module.ts": [
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/404/notfound.module.ts": [
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@nestjs/common/index.d.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/core.module.ts",
-        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/404/404.controller.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/404/notfound.service.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/404/notfound.controller.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/node/util.d.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/sidenotes/sidenotes.service.ts": [
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@nestjs/common/index.d.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/cms.service.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/marked/index.d.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/filler.service.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/post.service.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/node/util.d.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/sidenotes/sidenotes.controller.ts": [
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/express/index.d.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@nestjs/common/index.d.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/sidenotes/sidenotes.service.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/filler.service.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/404/notfound.service.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/node/util.d.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/sidenotes/sidenotes.module.ts": [
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@nestjs/common/index.d.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/core.module.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/sidenotes/sidenotes.service.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/sidenotes/sidenotes.controller.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/node/util.d.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -3267,7 +3307,8 @@
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/views.module.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/sitemap/sitemap.module.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/nest/nest.module.ts",
-        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/404/404.module.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/404/notfound.module.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/sidenotes/sidenotes.module.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/node/util.d.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -5265,15 +5306,16 @@
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/post.service.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/filler.service.ts"
       ],
-      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/controllers/single.controller.ts": [
-        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/post.service.ts",
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/404/notfound.service.ts": [
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/page.service.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/filler.service.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/express/index.d.ts"
       ],
-      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/controllers/page.controller.ts": [
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/controllers/posts.controller.ts": [
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/post.service.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/page.service.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/filler.service.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/404/notfound.service.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/express/index.d.ts"
       ],
       "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/preloader.service.ts": [
@@ -5311,10 +5353,21 @@
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/nest/nestpage.service.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/page.service.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/filler.service.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/404/notfound.service.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/express/index.d.ts"
       ],
-      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/404/404.controller.ts": [
-        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/page.service.ts",
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/404/notfound.controller.ts": [
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/404/notfound.service.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/express/index.d.ts"
+      ],
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/sidenotes/sidenotes.service.ts": [
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/cms.service.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/filler.service.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/post.service.ts"
+      ],
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/sidenotes/sidenotes.controller.ts": [
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/sidenotes/sidenotes.service.ts",
+        "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/404/notfound.service.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/filler.service.ts",
         "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/express/index.d.ts"
       ],
@@ -5907,6 +5960,8 @@
       "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/redis.service.ts",
       "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/cache.service.ts",
       "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/filler.service.ts",
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/page.service.ts",
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/post.service.ts",
       "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/range-parser/index.d.ts",
       "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/express-serve-static-core/index.d.ts",
       "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/mime/index.d.ts",
@@ -5914,10 +5969,25 @@
       "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/connect/index.d.ts",
       "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/body-parser/index.d.ts",
       "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/express/index.d.ts",
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/controllers/home.controller.ts",
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/404/notfound.service.ts",
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/controllers/posts.controller.ts",
       "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/preloader.service.ts",
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/core.module.ts",
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/middlewares/page.middleware.ts",
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/middlewares/post.middleware.ts",
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/views.module.ts",
       "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/sitemap/sitemap.service.ts",
       "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/sitemap/sitemap.controller.ts",
       "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/sitemap/sitemap.module.ts",
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/nest/nestpage.service.ts",
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/nest/nest.controller.ts",
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/nest/nest.module.ts",
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/404/notfound.controller.ts",
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/404/notfound.module.ts",
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/sidenotes/sidenotes.controller.ts",
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/sidenotes/sidenotes.module.ts",
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/app.module.ts",
       "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@nestjs/core/adapters/http-adapter.d.ts",
       "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@nestjs/core/adapters/index.d.ts",
       "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@nestjs/core/constants.d.ts",
@@ -5969,21 +6039,7 @@
       "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/types/hbs.d.ts",
       "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/types/markdown.d.ts",
       "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/node_modules/@types/json5/index.d.ts",
-      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/page.service.ts",
-      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/services/post.service.ts",
-      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/controllers/home.controller.ts",
-      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/controllers/single.controller.ts",
-      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/controllers/page.controller.ts",
-      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/core/core.module.ts",
-      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/middlewares/page.middleware.ts",
-      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/middlewares/post.middleware.ts",
-      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/views/views.module.ts",
-      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/nest/nestpage.service.ts",
-      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/nest/nest.controller.ts",
-      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/nest/nest.module.ts",
-      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/404/404.controller.ts",
-      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/404/404.module.ts",
-      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/app.module.ts"
+      "c:/users/sneak/documents/megasync/projects-2019/node/nestjs-app/src/sidenotes/sidenotes.service.ts"
     ]
   },
   "version": "3.4.3"
