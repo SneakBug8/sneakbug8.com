@@ -32,7 +32,8 @@ export default class PostService
                 description: 1,
                 image: 1,
                 nextlink: 1,
-                prevlink: 1
+                prevlink: 1,
+                customhomepage: 1
             }
         });
 
@@ -98,12 +99,12 @@ export default class PostService
         let previous = null;
         if (post.prevlink) {
             previous = await this.GetTitle(post.prevlink);
-            post.prevlink = null;
+            post.prevlink = undefined;
         }
         let next = null;
         if (post.nextlink) {
             next = await this.GetTitle(post.nextlink);
-            post.nextlink = null;
+            post.nextlink = undefined;
         }
         return await this.fillerService.Fill({
             title: post.title,
@@ -122,8 +123,12 @@ export interface Post
     content: string;
     date: string;
     hide: boolean;
-    description: string | null;
-    image: string | null;
-    prevlink: string | null;
-    nextlink: string | null;
+    description: string | undefined;
+    image: string | undefined;
+    prevlink: string | undefined;
+    nextlink: string | undefined;
+    customhomepage: {
+        link: string,
+        text: string
+    } | undefined;
 }

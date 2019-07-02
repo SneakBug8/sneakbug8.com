@@ -15,7 +15,11 @@
 
 <div class="row">
   <div class="col-12">
+    {{#if post.customhomepage}}
+    <a style="display: block; text-align: center;" href="{{post.customhomepage.link}}">{{post.customhomepage.text}}</a>
+    {{else}}
     <a style="display: block; text-align: center;" href="/">На главную</a>
+    {{/if}}
   </div>
 </div>
 {{/content}}

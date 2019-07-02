@@ -2,6 +2,16 @@
 {{#content "content"}}
 <p>{{{page.content}}}</p>
 
-<p><a href="/">&larr; На главную</a></p>
+<hr>
+
+<div class="row">
+  <div class="col-12">
+    {{#if page.customhomepage}}
+    <a style="display: block; text-align: center;" href="{{customhomepage.link}}">{{customhomepage.text}}</a>
+    {{else}}
+    <a style="display: block; text-align: center;" href="/">На главную</a>
+    {{/if}}
+  </div>
+</div>
 {{/content}}
 {{/extend}}

@@ -58,4 +58,8 @@ export interface Page
     url: string;
     content: string;
     description: string | null;
+    customhomepage: {
+        link: string,
+        text: string
+    } | undefined;
 }

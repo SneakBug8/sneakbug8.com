@@ -3,6 +3,7 @@ import CmsService from "../core/services/cms.service";
 
 import marked = require("marked");
 import FillerService from "../core/services/filler.service";
+import { Page } from "core/services/page.service";
 marked.setOptions({
     gfm: true,
     langPrefix: "",
@@ -43,18 +44,15 @@ export default class NestPageService
 
     public async GetRenderData(page: Page)
     {
+        page.customhomepage = {
+            text: "Главная документации NestJS",
+            link: "/nestjs-docs"
+        };
+
         return await this.fillerService.Fill({
             title: page.title,
             page,
-            description: page.description || null
+            description: page.description || null,
         });
     }
-}
-
-export interface Page
-{
-    title: string;
-    url: string;
-    content: string;
-    description: string | null;
 }

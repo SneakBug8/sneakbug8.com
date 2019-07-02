@@ -11,8 +11,6 @@ export class PageMiddleware implements NestMiddleware
 
     async use(@Req() req: express.Request, @Res() res: express.Response, next: () => void)
     {
-        console.log("page - " + req.url);
-
         const urlcatch = new RegExp("/(.+)/?").exec(req.url);
 
         if (!urlcatch) {

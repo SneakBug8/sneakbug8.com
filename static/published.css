@@ -21,6 +21,10 @@ h6,
   font-family: 'Open Sans', sans-serif;
 }
 
+small {
+  font-size: small;
+}
+
 .published-wrap {
   margin: 0 auto;
 }
@@ -327,9 +331,12 @@ a.btn:hover {
 }
 
 .card {
+  height: 100%;
+  width: 100%;
   border: 1px solid #4895d9;
   border-radius: 5px;
   padding: 10px;
+  margin-top: 15px;
   transition: border-color .3s ease;
 }
 
