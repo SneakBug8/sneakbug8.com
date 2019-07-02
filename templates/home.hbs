@@ -22,10 +22,14 @@ Hello, my name is Pavel Nakonechnyy. <i>I'm a web dev, blogger and project manag
 {{else}}
 <p>No posts</p>
 {{/if}}
-<p>
-    {{#if nextpage}}
-    <a href="/p/{{nextpage}}">Следующая страница</a>
-    {{/if}}
-</p>
+
+{{#if nextpage}}
+<hr>
+<div class="row">
+    <div class="col-12">
+        <a href="/p/{{nextpage}}" style="float:right; text-align:right;">Следующая страница &rarr;</a>
+    </div>
+</div>
+{{/if}}
 {{/content}}
 {{/extend}}

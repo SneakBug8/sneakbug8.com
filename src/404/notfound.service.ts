@@ -1,16 +1,24 @@
-import * as express from "express";
-import { Get, Param, Controller, Res } from "@nestjs/common";
-import PageService from "../core/services/page.service";
+import { Injectable } from "@nestjs/common";
+
+import marked = require("marked");
 import FillerService from "../core/services/filler.service";
+import PageService, { Page } from "../core/services/page.service";
+import * as express from "express";
 
-@Controller()
-export default class NotFoundController
+marked.setOptions({
+    gfm: true,
+    langPrefix: "",
+    smartypants: true
+});
+
+@Injectable()
+export default class NotFoundService
 {
-    constructor(private readonly pageService: PageService,
-        private readonly fillerService: FillerService) { }
+    public constructor(private readonly pageService: PageService, private readonly fillerService: FillerService)
+    {
+    }
 
-    @Get("*")
-    async request(@Param("id") id: string, @Res() res: express.Response)
+    public async Send404(res: express.Response)
     {
         const page404 = await this.pageService.GetWithUrl("404");
 

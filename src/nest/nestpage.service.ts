@@ -3,7 +3,7 @@ import CmsService from "../core/services/cms.service";
 
 import marked = require("marked");
 import FillerService from "../core/services/filler.service";
-import { Page } from "core/services/page.service";
+import { Page } from "../core/services/page.service";
 marked.setOptions({
     gfm: true,
     langPrefix: "",

@@ -1,15 +1,14 @@
 import { Module, MiddlewareConsumer, NestModule, Post } from "@nestjs/common";
 
 import HomeController from "../views/controllers/home.controller";
-import SingleController from "../views/controllers/single.controller";
-import { PageController } from "../views/controllers/page.controller";
+import { PostsController } from "./controllers/posts.controller";
 import { CoreModule } from "../core/core.module";
 import { PageMiddleware } from "./middlewares/page.middleware";
 import { PostMiddleware } from "./middlewares/post.middleware";
 
 @Module({
   imports: [CoreModule],
-  controllers: [HomeController, SingleController, PageController],
+  controllers: [HomeController, PostsController],
   providers: [],
 })
 export class ViewsModule implements NestModule
