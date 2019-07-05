@@ -336,7 +336,7 @@ a.btn:not(.btn-outline):hover {
 a.btn.btn-outline {
   background-color: transparent;
   border: 1px solid #4895d9;
-  transition: border-color .3s ease;
+  transition: border-color .3s ease, color .3s ease;
 }
 
 a.btn.btn-outline:hover {
