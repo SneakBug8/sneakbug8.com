@@ -3,7 +3,8 @@ import CmsService from "../core/services/cms.service";
 
 import marked = require("marked");
 import FillerService from "../core/services/filler.service";
-import { Post } from "core/services/post.service";
+import { Page } from "core/services/page.service";
+import SitemapService from "../sitemap/sitemap.service";
 marked.setOptions({
     gfm: true,
     langPrefix: "",
@@ -13,15 +14,18 @@ marked.setOptions({
 @Injectable()
 export default class SidenotesService
 {
-    private PagesCollection = "sidenotes";
+    private NotesCollection = "sidenotes";
 
-    public constructor(private readonly cmsService: CmsService, private readonly fillerService: FillerService)
+    public constructor(private readonly cmsService: CmsService,
+        private readonly fillerService: FillerService,
+        private readonly sitemapService: SitemapService)
     {
+        setTimeout(() => this.AppendToSitemap(), Math.random() * 10000);
     }
 
     public async GetWithUrl(url: string)
     {
-        const pages = await this.cmsService.collections.getWithParams(this.PagesCollection, {
+        const notes = await this.cmsService.collections.getWithParams<Note[]>(this.NotesCollection, {
             filter: {
                 url
             },
@@ -31,8 +35,8 @@ export default class SidenotesService
             }
         });
 
-        if (pages.length) {
-            const page = pages[0] as Post;
+        if (notes && notes.length) {
+            const page = notes[0];
             page.content = marked.parse(page.content);
             return page;
         }
@@ -43,7 +47,7 @@ export default class SidenotesService
 
     public async LoadPage(page: number)
     {
-        const notes = await this.cmsService.collections.getWithParams(this.PagesCollection, {
+        const notes = await this.cmsService.collections.getWithParams(this.NotesCollection, {
             sort: {
                 date: -1,
                 _created: -1
@@ -55,7 +59,7 @@ export default class SidenotesService
             },
             limit: 100,
             skip: (page - 1) * 100
-        }) as Post[];
+        }) as Note[];
 
         if (notes.length) {
             for (const note of notes) {
@@ -70,7 +74,7 @@ export default class SidenotesService
 
     private async GetTitle(url: string)
     {
-        const posts = await this.cmsService.collections.getWithParams(this.PagesCollection, {
+        const notes = await this.cmsService.collections.getWithParams<Note[]>(this.NotesCollection, {
             filter: {
                 url,
             },
@@ -80,8 +84,8 @@ export default class SidenotesService
             }
         });
 
-        if (posts.length) {
-            const post = posts[0] as Post;
+        if (notes && notes.length) {
+            const post = notes[0] as Note;
             return post;
         }
         else {
@@ -89,7 +93,7 @@ export default class SidenotesService
         }
     }
 
-    public async GetRenderData(note: Post, nodeindex: number)
+    public async GetRenderData(note: Note, nodeindex: number)
     {
         const previous = await this.GetTitle((nodeindex - 1).toString());
         if (previous) {
@@ -112,4 +116,34 @@ export default class SidenotesService
             next
         });
     }
+
+    async AppendToSitemap() {
+        const notes = await this.cmsService.collections.getWithParams<Note[]>(this.NotesCollection, {
+            limit: 1000,
+            sort: {
+                _modified: -1
+            },
+            fields: {
+                url: 1
+            }
+        });
+
+        if (!notes) {
+            return;
+        }
+
+        for (const note of notes) {
+            this.sitemapService.sitemap.add({
+                url: "/sidenotes/" + note.url,
+                changefreq: "weekly",
+                priority: 0.3
+            });
+        }
+
+        console.log("Added " + notes.length + " notes to sitemap");
+    }
+}
+
+interface Note extends Page {
+
 }

@@ -4,6 +4,7 @@ import CmsService from "../core/services/cms.service";
 import marked = require("marked");
 import FillerService from "../core/services/filler.service";
 import { Page } from "../core/services/page.service";
+import SitemapService from "../sitemap/sitemap.service";
 marked.setOptions({
     gfm: true,
     langPrefix: "",
@@ -15,13 +16,15 @@ export default class NestPageService
 {
     private PagesCollection = "nestjsdocs";
 
-    public constructor(private readonly cmsService: CmsService, private readonly fillerService: FillerService)
+    public constructor(private readonly cmsService: CmsService,
+        private readonly fillerService: FillerService,
+        private readonly sitemapService: SitemapService)
     {
     }
 
     public async GetWithUrl(url: string)
     {
-        const pages = await this.cmsService.collections.getWithParams(this.PagesCollection, {
+        const pages = await this.cmsService.collections.getWithParams<Page[]>(this.PagesCollection, {
             filter: {
                 url
             },
@@ -32,7 +35,7 @@ export default class NestPageService
             }
         });
 
-        if (pages.length) {
+        if (pages && pages.length) {
             const page = pages[0] as Page;
             page.content = marked.parse(page.content);
             return page;
@@ -54,5 +57,31 @@ export default class NestPageService
             page,
             description: page.description || null,
         });
+    }
+
+    async AppendToSitemap() {
+        const pages = await this.cmsService.collections.getWithParams<Page[]>(this.PagesCollection, {
+            limit: 1000,
+            sort: {
+                _modified: -1
+            },
+            fields: {
+                url: 1
+            }
+        });
+
+        if (!pages) {
+            return;
+        }
+
+        for (const page of pages) {
+            this.sitemapService.sitemap.add({
+                url: "/nestjs-docs/" + page.url,
+                changefreq: "monthly",
+                priority: 0.1
+            });
+        }
+
+        console.log("Added " + pages.length + " nestjs-docs to sitemap");
     }
 }

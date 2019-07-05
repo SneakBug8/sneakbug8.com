@@ -3,6 +3,9 @@ import CmsService from "./cms.service";
 
 import marked = require("marked");
 import FillerService from "./filler.service";
+import { Page } from "./page.service";
+import SitemapService from "../../sitemap/sitemap.service";
+
 marked.setOptions({
     gfm: true,
     langPrefix: "",
@@ -12,16 +15,19 @@ marked.setOptions({
 @Injectable()
 export default class PostService
 {
-    public constructor(private readonly cmsService: CmsService, private readonly fillerService: FillerService)
+    public constructor(private readonly cmsService: CmsService,
+        private readonly fillerService: FillerService,
+        private readonly sitemapService: SitemapService)
     {
         this.PostsCollection = process.env.PostsCollection as string;
+        setTimeout(() => this.AppendToSitemap(), Math.random() * 10000);
     }
 
     public PostsCollection = "Posts";
 
     public async GetWithUrl(url: string)
     {
-        const posts = await this.cmsService.collections.getWithParams(this.PostsCollection, {
+        const posts = await this.cmsService.collections.getWithParams<Post[]>(this.PostsCollection, {
             filter: {
                 url,
             },
@@ -37,8 +43,8 @@ export default class PostService
             }
         });
 
-        if (posts.length) {
-            const post = posts[0] as Post;
+        if (posts) {
+            const post = posts[0];
             post.content = marked.parse(post.content);
             return post;
         }
@@ -75,7 +81,7 @@ export default class PostService
 
     private async GetTitle(url: string)
     {
-        const posts = await this.cmsService.collections.getWithParams(this.PostsCollection, {
+        const posts = await this.cmsService.collections.getWithParams<Post[]>(this.PostsCollection, {
             filter: {
                 url,
             },
@@ -85,8 +91,8 @@ export default class PostService
             }
         });
 
-        if (posts.length) {
-            const post = posts[0] as Post;
+        if (posts) {
+            const post = posts[0];
             return post;
         }
         else {
@@ -114,21 +120,39 @@ export default class PostService
             next
         });
     }
+
+    async AppendToSitemap() {
+        const posts = await this.cmsService.collections.getWithParams<Post[]>(this.PostsCollection, {
+            limit: 1000,
+            sort: {
+                _modified: -1
+            },
+            fields: {
+                url: 1
+            }
+        });
+
+        if (!posts) {
+            return;
+        }
+
+        for (const post of posts) {
+            this.sitemapService.sitemap.add({
+                url: post.url,
+                changefreq: "weekly",
+                priority: 0.3
+            });
+        }
+
+        console.log("Added " + posts.length + " posts to sitemap");
+    }
 }
 
-export interface Post
+export interface Post extends Page
 {
-    title: string;
-    url: string;
-    content: string;
     date: string;
     hide: boolean;
-    description: string | undefined;
     image: string | undefined;
     prevlink: string | undefined;
     nextlink: string | undefined;
-    customhomepage: {
-        link: string,
-        text: string
-    } | undefined;
 }
