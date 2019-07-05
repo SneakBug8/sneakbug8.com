@@ -1,13 +1,15 @@
 import fetch from "node-fetch";
 import { Injectable } from "@nestjs/common";
 import DotenvService from "./dotenv.service";
+import RequestService from "./request.service";
 
 @Injectable()
 export default class CmsService
 {
     CockpitUrl = "";
     CockpitToken = "";
-    constructor(private readonly dotnetService: DotenvService)
+    constructor(private readonly dotnetService: DotenvService,
+        private readonly requestService: RequestService)
     {
         this.CockpitUrl = dotnetService.config.CockpitUrl as string;
         this.CockpitToken = dotnetService.config.CockpitToken as string;
@@ -18,37 +20,14 @@ export default class CmsService
         return this.CockpitUrl + url + "?token=" + this.CockpitToken;
     }
     collections = {
-        get: async (collectionName: string) =>
+        get: async <T>(collectionName: string) =>
         {
-            const res = await fetch(this.getUrl("/api/collections/get/" + collectionName));
-
-            const product = await res.json();
-            if (res.ok && !product.error && product.total) {
-                return product.entries;
-            }
-            else {
-                return false;
-            }
+            return await this.requestService.get<T>(this.getUrl("/api/collections/get/" + collectionName));
         },
-        getWithParams: async (collectionName: string, requestBody: any) =>
+        getWithParams: async <T>(collectionName: string, requestBody: RequestParams) =>
         {
-            const init = {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(requestBody)
-            };
-
-            const res = await fetch(this.getUrl("/api/collections/get/" + collectionName), init);
-            const product = await res.json();
-
-            if (res.ok && !product.error && product.total) {
-                return product.entries;
-            }
-            else {
-                return false;
-            }
+            return await this.requestService.post<T>(this.getUrl("/api/collections/get/" + collectionName),
+                requestBody);
         }
     };
 
@@ -63,7 +42,7 @@ export default class CmsService
                 })
             });
 
-            return res.json();
+            return await res.json();
         }
     };
 
@@ -76,8 +55,39 @@ export default class CmsService
                 return res.json();
             }
             else {
-                return null;
+                return undefined;
             }
         }
     };
+}
+
+interface RequestParams
+{
+    filter?: {
+        _id?: number | undefined;
+        _created?: number | undefined;
+        _modified?: number | undefined;
+        [key: string]: string | number | boolean | undefined;
+    } | undefined;
+    sort?: {
+        _id?: number | undefined;
+        _created?: number | undefined;
+        _modified?: number | undefined;
+        [key: string]: number | undefined;
+    } | undefined;
+    limit?: number | undefined;
+    skip?: number | undefined;
+    fields?: {
+        _id?: number | undefined;
+        _created?: number | undefined;
+        _modified?: number | undefined;
+        [key: string]: number | undefined;
+    } | undefined;
+}
+
+export interface CmsObjectData
+{
+    _created: string,
+    _modified: string,
+    [key: string]: any;
 }
