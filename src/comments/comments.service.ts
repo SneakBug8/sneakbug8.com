@@ -38,6 +38,7 @@ export default class CommentsService
 
 export interface Comment
 {
+    id: string;
     author: string;
     url: string;
     content: string;
