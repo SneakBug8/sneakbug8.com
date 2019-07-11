@@ -3,11 +3,10 @@
   "version": "0.0.1",
   "description": "",
   "author": "",
-  "license": "MIT",
+  "license": "GPL",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
-    "start": "ts-node -r tsconfig-paths/register src/main.ts",
-    "start:prod": "node bin/main.js"
+    "start": "node bin/main.js"
   },
   "dependencies": {
     "@nestjs/common": "^6.0.0",
