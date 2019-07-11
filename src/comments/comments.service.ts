@@ -19,6 +19,9 @@ export default class CommentsService
             fields: {
                 author: 1,
                 content: 1
+            },
+            sort: {
+                id: -1
             }
         });
 
@@ -32,6 +35,7 @@ export default class CommentsService
 
     public async Post(comment: Comment)
     {
+        console.log(comment);
         this.cmsService.collections.save(this.CommentsCollection, [comment]);
     }
 }

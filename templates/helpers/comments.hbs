@@ -1,7 +1,4 @@
-Комментарии для {{url}}
-{{#each comments}}
-<p><b>{{author}}</b>: {{content}}</p>
-{{/each}}
+<h4>Комментарии</h4>
 <form id="comments" action="https://sneakbug8.com/comments/post/{{url}}" method="POST">
     Ваше имя:<br><input type="text" name="author" placeholder="Ваше имя"><br>
     Ваш комментарий:<br>
@@ -9,3 +6,6 @@
     <input type="hidden" name="redirect" value="{{redirect}}#comments"><br>
     <input type="submit" value="Отправить">
 </form>
+{{#each comments}}
+<p><b>{{author}}</b>: {{content}}</p>
+{{/each}}
