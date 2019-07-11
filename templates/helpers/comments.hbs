@@ -1,11 +1,11 @@
 <h4>Комментарии</h4>
 <form id="comments" action="https://sneakbug8.com/comments/post/{{url}}" method="POST">
-    Ваше имя:<br><input type="text" name="author" placeholder="Ваше имя"><br>
+    Ваше имя:<br><input type="text" name="author" placeholder="Ваше имя" maxlength="40"><br>
     Ваш комментарий:<br>
-    <textarea name="content" rows="10" cols="30"></textarea>
+    <textarea name="content" rows="2" cols="30" maxlength="144"></textarea>
     <input type="hidden" name="redirect" value="{{redirect}}#comments"><br>
     <input type="submit" value="Отправить">
 </form>
 {{#each comments}}
-<p><b>{{author}}</b>: {{this.content}}</p>
+<b>{{author}}</b>: {{this.content}}<br>
 {{/each}}

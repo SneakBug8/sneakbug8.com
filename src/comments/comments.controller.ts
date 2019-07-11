@@ -24,7 +24,6 @@ export default class CommentsController
         console.log("Comment on " + url);
 
         const comment = {
-            id: Date.now().toString() + Math.round(Math.random() * 10),
             author: req.body.author,
             content: req.body.content,
             url
