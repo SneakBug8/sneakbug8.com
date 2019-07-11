@@ -13,6 +13,8 @@ import * as dotenv from "dotenv";
 import minify = require("express-minify");
 import compression = require("compression");
 
+import * as express from "express";
+
 const config = dotenv.config().parsed as any;
 
 function configureHandlebars()
@@ -40,6 +42,7 @@ async function bootstrap()
 
   app.use(compression());
   app.use(minify());
+  app.use(express.urlencoded({ extended: false }));
 
   await app.listen(config.port);
 }
