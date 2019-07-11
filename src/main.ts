@@ -1,51 +1,7 @@
-import { NestFactory } from "@nestjs/core";
-import { NestExpressApplication } from "@nestjs/platform-express";
-
-import { AppModule } from "./app.module";
-
-import * as path from "path";
-
-import layouts = require("handlebars-layouts");
-import hbs = require("hbs");
-
 import * as dotenv from "dotenv";
-
-import minify = require("express-minify");
-import compression = require("compression");
-
-import * as express from "express";
-
 const config = dotenv.config().parsed as any;
 
-function configureHandlebars()
-{
-  hbs.registerHelper(layouts(hbs.handlebars));
+import { App } from "app";
+const app = new App(config);
 
-  const templatesPath = config.templatesPath || "templates";
-
-  hbs.registerPartials(__dirname + "/../" + templatesPath);
-}
-
-async function bootstrap()
-{
-  const app = await NestFactory.create<NestExpressApplication>(AppModule);
-
-  const templatesPath = config.templatesPath || "templates";
-
-  app.useStaticAssets(path.join(__dirname, "..", "root"));
-  app.useStaticAssets(path.join(__dirname, "..", "static"), {
-    prefix: "/static"
-  });
-
-  app.setBaseViewsDir(path.join(__dirname, "..", templatesPath));
-  app.setViewEngine("hbs");
-
-  app.use(compression());
-  app.use(minify());
-  app.use(express.urlencoded({ extended: false }));
-
-  await app.listen(config.port);
-}
-
-configureHandlebars();
-bootstrap();
+app.bootstrap();
