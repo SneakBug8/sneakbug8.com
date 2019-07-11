@@ -100,7 +100,7 @@ export default class PostService
         }
     }
 
-    public async GetRenderData(post: Post)
+    public async GetRenderData(post: Post, rootobj: any = {})
     {
         let previous = null;
         if (post.prevlink) {
@@ -113,6 +113,7 @@ export default class PostService
             post.nextlink = undefined;
         }
         return await this.fillerService.Fill({
+            ...rootobj,
             title: post.title,
             post,
             description: post.description || null,
@@ -121,7 +122,8 @@ export default class PostService
         });
     }
 
-    async AppendToSitemap() {
+    async AppendToSitemap()
+    {
         const posts = await this.cmsService.collections.getWithParams<Post[]>(this.PostsCollection, {
             limit: 1000,
             sort: {

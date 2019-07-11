@@ -1,0 +1,36 @@
+{{#extend "index"}}
+{{#content "content"}}
+<div class="h-entry">
+    {{{post.content}}}
+
+    <div class="row">
+        <div class="col-sm-12">
+            {{#if post.date}}<i>Опубликовано {{post.date}}</i>{{/if}}
+            <div id="vk_comments"></div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
+<hr>
+
+{{#> helpers/postnav}}
+{{/helpers/postnav}}
+
+<div class="row">
+    <div class="col-12">
+        {{#if post.customhomepage}}
+        <a style="display: block; text-align: center;"
+            href="{{post.customhomepage.link}}">{{post.customhomepage.text}}</a>
+        {{else}}
+        <a style="display: block; text-align: center;" href="/">На главную</a>
+        {{/if}}
+    </div>
+</div>
+{{/content}}
+{{#content "footer"}}
+<script type="text/javascript">
+    VK.init({ apiId: 7003744, onlyWidgets: true });
+    VK.Widgets.Comments("vk_comments", { limit: 10, attach: false, autoPublish: 1, pageUrl: window.location.href }, "{{post._id}}");
+</script>
+{{/content}}
+{{/extend}}

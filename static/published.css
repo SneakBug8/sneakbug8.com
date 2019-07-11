@@ -307,20 +307,20 @@ p.lead {
   text-decoration: none;
 }
 
-a.btn {
+a.btn, input[type="submit"] {
   display: inline-block;
   padding: 10px;
   margin: 2px;
   text-decoration: none;
 }
 
-a.btn:not(.btn-outline) {
+a.btn:not(.btn-outline), input[type="submit"] {
   background-color: RoyalBlue;
   color: #f6f7f8;
   transition: background-color .3s ease;
 }
 
-a.btn:not(.btn-outline):hover {
+a.btn:not(.btn-outline):hover, input[type="submit"]:hover {
   background-color: #d82e2e;
   color: #f6f7f8;
 }
@@ -378,7 +378,9 @@ html.dark .homelink {
   background-color: #101010;
 }
 
-html.dark .note-detail-markdown pre {
+html.dark .note-detail-markdown pre,
+html.dark input,
+html.dark textarea {
   background-color: #1f1f1f;
 }
 

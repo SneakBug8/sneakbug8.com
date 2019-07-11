@@ -31,7 +31,7 @@ export default class SidenotesController
         const page = await this.sidenotesService.GetWithUrl(url);
 
         if (page) {
-            res.render("single", await this.sidenotesService.GetRenderData(page, noteindex));
+            res.render("sidenote", await this.sidenotesService.GetRenderData(page, noteindex));
             return;
         }
 

@@ -1,10 +1,12 @@
 import fetch from "node-fetch";
 import { Injectable } from "@nestjs/common";
-import DotenvService from "./dotenv.service";
 import CacheService from "./cache.service";
 
 import * as _ from "lodash";
 
+/*
+Obsolette and obviously stupid try to cache headless cms requests
+*/
 @Injectable()
 export default class RequestService
 {

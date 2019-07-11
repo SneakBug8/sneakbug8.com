@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
-import DotenvService from "./dotenv.service";
-import CmsService from "./cms.service";
+import DotenvService from "../../base/dotenv.service";
+import { CmsService } from "./cms.service";
 import CacheService from "./cache.service";
 
 @Injectable()

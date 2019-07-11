@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import sm = require("sitemap");
-import CmsService from "../core/services/cms.service";
+import { CmsService } from "../core/services/cms.service";
 
 @Injectable()
 export default class SitemapService
