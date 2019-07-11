@@ -46,6 +46,12 @@
 </head>
 
 <body>
+	<div id="headline">
+		{{#unless hidehomelink}}
+		<a id="homelink" href="/" title="На главную">🏠</a>
+		{{/unless}}
+		<a href="javascript:undefined" id="themebutton" title="Тёмная тема">💡</a>
+	</div>
 	<div class="published-wrap no-ad-size">
 		<div class="wrapper">
 			<div class="app">
@@ -61,9 +67,6 @@
 			</div><!-- .app -->
 		</div>
 	</div>
-	{{#unless hidehomelink}}
-	<a class="homelink hide" style="display: none;" href="/">&larr; 🏠</a>
-	{{/unless}}
 </body>
 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
@@ -80,29 +83,7 @@
 {{#block "footer"}}
 {{/block}}
 
-{{#unless hidehomelink}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cash/4.1.2/cash.min.js"></script>
-<script>
-	$(function () {
-		$(window).on("scroll", function () {
-			if (window.scrollY > 100)
-			{
-				$(".homelink").show()
-				$(".homelink").removeClass("hide")
-			}
-			else
-			{
-				if (!$(".homelink").hasClass("hide"))
-				{
-					$(".homelink").addClass("hide")
-					setTimeout(function () {
-						$(".homelink").hide()
-					}, 300);
-				}
-			}
-		})
-	});
-</script>
-{{/unless}}
+<script src="/static/script.js"></script>
 
 </html>

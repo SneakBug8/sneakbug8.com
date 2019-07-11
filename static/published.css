@@ -8,6 +8,10 @@ html {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+body {
+  margin: 0;
+}
+
 h1,
 h2,
 h3,
@@ -26,10 +30,8 @@ small {
 }
 
 .published-wrap {
-  margin: 0 auto;
-}
-
-.published-wrap.no-ad-size {
+  margin: 1.5em auto 0 auto;
+  background-color: white;
   max-width: 832px;
 }
 
@@ -143,7 +145,7 @@ p.lead {
 }
 
 .note-detail-markdown a {
-  color: #4895d9;
+  color: RoyalBlue;
   transition: color .3s ease;
 }
 
@@ -154,7 +156,7 @@ p.lead {
 .note-detail-markdown hr {
   border: 0;
   margin: 3.4em 0;
-  color: #4895d9;
+  color: RoyalBlue;
   height: 1em;
   transition: color .3s ease;
 }
@@ -278,26 +280,16 @@ p.lead {
   margin-right: 5px;
 }
 
-.homelink {
-  background-color: white;
-  position: fixed;
-  top: 0;
-  left: 0;
+#homelink, #themebutton {
   font-size: 18pt;
   text-decoration: none;
   padding: 5px;
-  transition: font-size .3s ease, color .3s ease, background-color .3s ease;
+  transition: font-size .3s ease;
 }
 
-.homelink:hover:not(.hide) {
+#homelink:hover, #themebutton:hover {
   font-size: 24pt;
 }
-
-.homelink.hide {
-  color: transparent;
-  background-color: transparent;
-}
-
 
 @media only screen and (min-width: 576px) {
   .frontposts {
@@ -323,7 +315,7 @@ a.btn {
 }
 
 a.btn:not(.btn-outline) {
-  background-color: #4895d9;
+  background-color: RoyalBlue;
   color: #f6f7f8;
   transition: background-color .3s ease;
 }
@@ -335,7 +327,7 @@ a.btn:not(.btn-outline):hover {
 
 a.btn.btn-outline {
   background-color: transparent;
-  border: 1px solid #4895d9;
+  border: 1px solid RoyalBlue;
   transition: border-color .3s ease, color .3s ease;
 }
 
@@ -346,7 +338,7 @@ a.btn.btn-outline:hover {
 .card {
   height: 100%;
   width: 100%;
-  border: 1px solid #4895d9;
+  border: 1px solid RoyalBlue;
   border-radius: 5px;
   padding: 10px;
   margin-top: 15px;
@@ -358,7 +350,7 @@ a.btn.btn-outline:hover {
 }
 
 .color-primary {
-  color: #4895d9;
+  color: RoyalBlue;
 }
 
 .color-secondary {
@@ -367,4 +359,36 @@ a.btn.btn-outline:hover {
 
 .color-mute {
   color: #616870;
+}
+
+/* Dark theme */
+#headline {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  min-height: 1.5em;
+  background-color: royalblue;
+}
+
+html.dark body,
+html.dark .published-wrap,
+html.dark .homelink {
+  background-color: #101010;
+}
+
+html.dark .note-detail-markdown pre {
+  background-color: #1f1f1f;
+}
+
+html.dark p,
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6,
+html.dark .app *:not(a) {
+  color: #eeeeee;
 }
