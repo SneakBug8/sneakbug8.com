@@ -35,7 +35,6 @@ export default class CommentsService
 
     public async Post(comment: Comment)
     {
-        console.log(comment);
         this.cmsService.collections.save(this.CommentsCollection, [comment]);
     }
 }
