@@ -13,14 +13,6 @@ import * as dotenv from "dotenv";
 import minify = require("express-minify");
 import compression = require("compression");
 
-function sleep(ms: number)
-{
-  return new Promise((resolve) =>
-  {
-    setTimeout(resolve, ms);
-  });
-}
-
 const config = dotenv.config().parsed as any;
 
 function configureHandlebars()
