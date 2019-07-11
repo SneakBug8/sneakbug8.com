@@ -1,5 +1,5 @@
 import { Injectable } from "@nestjs/common";
-import CmsService, { CmsObjectData } from "./cms.service";
+import { CmsService, CmsObjectData } from "./cms.service";
 
 import marked = require("marked");
 import FillerService from "./filler.service";

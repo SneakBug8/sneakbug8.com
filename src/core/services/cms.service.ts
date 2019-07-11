@@ -1,33 +1,74 @@
 import fetch from "node-fetch";
 import { Injectable } from "@nestjs/common";
-import DotenvService from "./dotenv.service";
-import RequestService from "./request.service";
+import DotenvService from "../../base/dotenv.service";
 
 @Injectable()
-export default class CmsService
+export class CmsService
 {
     CockpitUrl = "";
     CockpitToken = "";
-    constructor(private readonly dotnetService: DotenvService,
-        private readonly requestService: RequestService)
+    constructor(private readonly dotnetService: DotenvService)
     {
         this.CockpitUrl = dotnetService.config.CockpitUrl as string;
         this.CockpitToken = dotnetService.config.CockpitToken as string;
     }
 
-    getUrl(url: string)
+    getUrl(url: string): string
     {
         return this.CockpitUrl + url + "?token=" + this.CockpitToken;
     }
+
     collections = {
         get: async <T>(collectionName: string) =>
         {
-            return await this.requestService.get<T>(this.getUrl("/api/collections/get/" + collectionName));
+            const res = await fetch(this.getUrl("/api/collections/get/" + collectionName));
+
+            const product = await res.json();
+
+            if (res.ok && !product.error && product.total) {
+                return product.entries as T;
+            }
+            else {
+                return false;
+            }
         },
         getWithParams: async <T>(collectionName: string, requestBody: RequestParams) =>
         {
-            return await this.requestService.post<T>(this.getUrl("/api/collections/get/" + collectionName),
-                requestBody);
+            const init = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(requestBody)
+            };
+
+            const res = await fetch(this.getUrl("/api/collections/get/" + collectionName), init);
+            const product = await res.json();
+
+            if (res.ok && !product.error && product.total) {
+                return product.entries as T;
+            }
+
+            return undefined;
+        },
+        save: async (collectionName: string, requestBody: any) =>
+        {
+            const init = {
+                method: "post",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    data: requestBody
+                })
+            };
+
+            const res = await fetch(this.getUrl("/api/collections/save/" + collectionName), init);
+            if (res.ok) {
+                return await res.text();
+            }
+
+            return undefined;
         }
     };
 
@@ -42,7 +83,11 @@ export default class CmsService
                 })
             });
 
-            return await res.json();
+            if (res.ok) {
+                return await res.json();
+            }
+
+            return undefined;
         }
     };
 
@@ -64,30 +109,30 @@ export default class CmsService
 interface RequestParams
 {
     filter?: {
-        _id?: number | undefined;
-        _created?: number | undefined;
-        _modified?: number | undefined;
+        _id?: number;
+        _created?: number;
+        _modified?: number;
         [key: string]: string | number | boolean | undefined;
-    } | undefined;
+    };
     sort?: {
-        _id?: number | undefined;
-        _created?: number | undefined;
-        _modified?: number | undefined;
+        _id?: number;
+        _created?: number;
+        _modified?: number;
         [key: string]: number | undefined;
-    } | undefined;
-    limit?: number | undefined;
-    skip?: number | undefined;
+    };
+    limit?: number;
+    skip?: number;
     fields?: {
-        _id?: number | undefined;
-        _created?: number | undefined;
-        _modified?: number | undefined;
+        _id?: number;
+        _created?: number;
+        _modified?: number;
         [key: string]: number | undefined;
-    } | undefined;
+    };
 }
 
 export interface CmsObjectData
 {
-    _created: string,
-    _modified: string,
+    _created: string;
+    _modified: string;
     [key: string]: any;
 }

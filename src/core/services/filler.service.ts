@@ -1,6 +1,8 @@
 import { Injectable } from "@nestjs/common";
 import CacheService from "./cache.service";
 
+import * as express from "express";
+
 @Injectable()
 export default class FillerService
 {
