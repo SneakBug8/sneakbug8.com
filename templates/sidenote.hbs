@@ -1,6 +1,6 @@
 {{#extend "index"}}
 {{#content "content"}}
-<div class="h-entry">
+<article>
     {{{post.content}}}
 
     <div class="row">
@@ -9,7 +9,6 @@
             <div id="vk_comments"></div>
         </div>
     </div>
-</div>
 <script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
 <hr>
 
@@ -26,6 +25,7 @@
         {{/if}}
     </div>
 </div>
+</article>
 {{/content}}
 {{#content "footer"}}
 <script type="text/javascript">

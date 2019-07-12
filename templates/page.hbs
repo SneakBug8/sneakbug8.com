@@ -1,9 +1,8 @@
 {{#extend "index"}}
 {{#content "content"}}
-<p>{{{page.content}}}</p>
-
+<article>
+  {{{page.content}}}
 <hr>
-
 <div class="row">
   <div class="col-12">
     {{#if page.customhomepage}}
@@ -13,5 +12,6 @@
     {{/if}}
   </div>
 </div>
+</article>
 {{/content}}
 {{/extend}}
