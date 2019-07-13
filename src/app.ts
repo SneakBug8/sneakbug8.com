@@ -12,6 +12,7 @@ import minify = require("express-minify");
 import compression = require("compression");
 
 import * as express from "express";
+import { DevMiddleware } from "devlogger";
 
 export class App
 {
@@ -50,6 +51,8 @@ export class App
         app.use(compression());
         app.use(minify());
         app.use(express.urlencoded({ extended: false }));
+
+        app.use(DevMiddleware);
 
         await app.listen(this.config.port);
     }
