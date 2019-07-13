@@ -39,7 +39,8 @@ export default class PostService
                 image: 1,
                 nextlink: 1,
                 prevlink: 1,
-                customhomepage: 1
+                customhomepage: 1,
+                tags: 1
             }
         });
 

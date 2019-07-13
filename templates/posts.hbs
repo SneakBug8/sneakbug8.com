@@ -2,7 +2,6 @@
 {{#content "content"}}
 {{#if posts}}
 <ul>
-
     {{#each posts}}
     <li>
         <a href="/{{url}}">{{title}}</a>
@@ -28,7 +27,11 @@
 
 <div class="row">
     <div class="col-12">
+        {{#if pagenum}}
         <span style="display: block; text-align: center;">Страница {{pagenum}}</span>
+        {{else}}
+        <a style="display: block; text-align: center;" href="/">На главную</a>
+        {{/if}}
     </div>
 </div>
 {{/content}}

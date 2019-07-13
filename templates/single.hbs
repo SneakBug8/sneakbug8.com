@@ -5,6 +5,7 @@
   <div class="row mb-3">
     <div class="col-sm-12">
       {{#if post.date}}<i id="date">Опубликовано {{post.date}}</i>{{/if}}
+      {{#if post.tags}} <i>{{#each post.tags}}<a href="/tag/{{this}}">#{{this}}</a> {{/each}}</i>{{/if}}
       <div id="vk_like"></div>
     </div>
   </div>
