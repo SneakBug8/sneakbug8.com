@@ -1,4 +1,4 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable, Logger } from "@nestjs/common";
 import { CmsService } from "./cms.service";
 
 import marked = require("marked");
@@ -146,7 +146,7 @@ export default class PostService
             });
         }
 
-        console.log("Added " + posts.length + " posts to sitemap");
+        Logger.log("Added " + posts.length + " posts to sitemap");
     }
 }
 
@@ -157,4 +157,5 @@ export interface Post extends Page
     image: string | undefined;
     prevlink: string | undefined;
     nextlink: string | undefined;
+    tags: string[];
 }

@@ -1,4 +1,4 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable, Logger } from "@nestjs/common";
 import DotenvService from "../../base/dotenv.service";
 import { CmsService } from "./cms.service";
 import CacheService from "./cache.service";
@@ -20,7 +20,7 @@ export default class PreloaderService
         const footer = await this.cmsService.singletons.get(FooterSingleton);
         await this.cacheService.set("footer", footer);
 
-        console.log("Loaded footer into cache");
-        console.log("Preloading completed");
+        Logger.log("Loaded footer into cache");
+        Logger.log("Preloading completed");
     }
 }

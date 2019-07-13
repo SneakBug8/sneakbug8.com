@@ -1,5 +1,5 @@
 import * as express from "express";
-import { Post, Param, Controller, Res, Req } from "@nestjs/common";
+import { Post, Param, Controller, Res, Req, Logger } from "@nestjs/common";
 
 import CommentsService, { Comment } from "./comments.service";
 
@@ -21,7 +21,7 @@ export default class CommentsController
             res.redirect(404, "/404");
         }
 
-        console.log("Comment on " + url);
+        Logger.log("Comment on " + url, undefined, false);
 
         const comment = {
             author: req.body.author,

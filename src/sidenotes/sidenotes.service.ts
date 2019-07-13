@@ -1,4 +1,4 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable, Logger } from "@nestjs/common";
 import { CmsService } from "../core/services/cms.service";
 
 import marked = require("marked");
@@ -140,7 +140,7 @@ export default class SidenotesService
             });
         }
 
-        console.log("Added " + notes.length + " notes to sitemap");
+        Logger.log("Added " + notes.length + " notes to sitemap");
     }
 }
 

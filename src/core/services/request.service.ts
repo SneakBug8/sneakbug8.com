@@ -1,5 +1,5 @@
 import fetch from "node-fetch";
-import { Injectable } from "@nestjs/common";
+import { Injectable, Logger } from "@nestjs/common";
 import CacheService from "./cache.service";
 
 import * as _ from "lodash";
@@ -74,7 +74,7 @@ export default class RequestService
         const cached = _.find(this.Cache, (x) => x.url === url && x.body === body);
 
         if (cached && Date.now() - cached.time < 1000 * 60 * 5) {
-            console.log("Retrieved " + url + JSON.stringify(body));
+            Logger.log("Retrieved " + url + JSON.stringify(body), undefined, false);
             return cached.res;
         }
         else if (cached) {
@@ -87,7 +87,7 @@ export default class RequestService
 
     async cacheRequest(url: string, body: any, res: any)
     {
-        console.log("Cached " + url + JSON.stringify(body));
+        Logger.log("Cached " + url + JSON.stringify(body), undefined, false);
 
         _.remove(this.Cache, (x) => x.url === url && x.body === body);
         this.Cache.push({

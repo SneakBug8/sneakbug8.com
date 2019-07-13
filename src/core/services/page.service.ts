@@ -1,4 +1,4 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable, Logger } from "@nestjs/common";
 import { CmsService, CmsObjectData } from "./cms.service";
 
 import marked = require("marked");
@@ -78,7 +78,7 @@ export default class PageService
             });
         }
 
-        console.log("Added " + pages.length + " pages to sitemap");
+        Logger.log("Added " + pages.length + " pages to sitemap");
     }
 }
 
