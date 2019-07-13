@@ -37,17 +37,43 @@ $(function () {
     if ("#themebutton") {
         $("#themebutton").on("click", function() {
             if (window.localStorage.getItem("dark")) {
-                window.localStorage.removeItem("dark");
-                $("html").removeClass("dark");
+                setlighttheme();
             }
             else {
-                $("html").addClass("dark");
-                window.localStorage.setItem("dark", "1");
+                setdarktheme(true);
             }
         })
     }
 
     if (window.localStorage.getItem("dark")) {
+        setdarktheme();
+    }
+    else {
+        $("#themebutton").text("🌙");
+    }
+
+    function setdarktheme(changed = 0) {
+        if (changed) {
+        gtag('event', "theme_changed", {
+            'event_label': "Changed theme to dark",
+            'value': "dark"
+          });
+        window.localStorage.setItem("dark", "1");
+        }
+
+        $("#themebutton").text("💡");
         $("html").addClass("dark");
+    }
+
+    function setlighttheme() {
+        gtag('event', "theme_changed", {
+            'event_label': "Changed theme to light",
+            'value': "light"
+          });
+
+        window.localStorage.removeItem("dark");
+
+        $("#themebutton").text("🌙");
+        $("html").removeClass("dark");
     }
 });
