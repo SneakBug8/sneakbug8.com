@@ -8,16 +8,13 @@
 	<meta name="referrer" content="origin">
 	<title>{{titlePrefix}} | {{title}}</title>
 	<meta property="og:title" content="{{title}}" />
-	<meta property="og:type" content="website" />
+	<meta property="og:type" content="article" />
 	{{#if description}}
 	<meta name="description" content="{{description}}">
 	<meta property="og:description" content="{{description}}">
 	{{/if}}
 	{{#if sitename}}
 	<meta property="og:site_name" content="{{sitename}}">
-	{{/if}}
-	{{#if url}}
-	<meta property="og:url" content="{{url}}" />
 	{{/if}}
 	{{#if image}}
 	<meta property="og:image" content="{{image}}" />
@@ -52,19 +49,17 @@
 		{{/unless}}
 		<a href="javascript:undefined" id="themebutton" title="Тёмная тема">💡</a>
 	</div>
-	<div class="published-wrap no-ad-size">
+	<div class="published-wrap">
 		<div class="wrapper">
-			<div class="app">
-				<div class="note note-detail-markdown">
-					{{#unless hidehomelink}}
-					<h4 id="headhomelink"><a href="/" class="color-mute">Pavel Nakonechnyy's Blog</a></h4>
-					{{/unless}}
-					<h1 class="p-name">{{title}}</h1>
-					{{#block "content"}}
-					{{/block}}
-					{{{footer.content}}}
-				</div><!-- .note -->
-			</div><!-- .app -->
+			<div class="note note-detail-markdown">
+				{{#unless hidehomelink}}
+				<h4 id="headhomelink"><a href="/" class="color-mute">Pavel Nakonechnyy's Blog</a></h4>
+				{{/unless}}
+				<h1 class="p-name">{{title}}</h1>
+				{{#block "content"}}
+				{{/block}}
+				{{{footer.content}}}
+			</div>
 		</div>
 	</div>
 </body>

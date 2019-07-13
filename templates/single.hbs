@@ -2,7 +2,7 @@
 {{#content "content"}}
 <article>
   {{{post.content}}}
-  <div class="row">
+  <div class="row mb-3">
     <div class="col-sm-12">
       {{#if post.date}}<i id="date">Опубликовано {{post.date}}</i>{{/if}}
       <div id="vk_like"></div>
@@ -10,7 +10,6 @@
   </div>
   <div class="row" id="comments">
     <div class="col-sm-12 col-md-6">
-
       <div id="vk_comments"></div>
     </div>
     <div class="col-sm-12 col-md-6">
@@ -18,21 +17,22 @@
       {{/helpers/comments}}
     </div>
   </div>
-<script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
-<hr>
-{{#> helpers/postnav}}
-{{/helpers/postnav}}
+  <script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
+  <hr>
+  {{#> helpers/postnav}}
+  {{/helpers/postnav}}
 
 
-<div class="row">
-  <div class="col-12">
-    {{#if post.customhomepage}}
-    <a style="display: block; text-align: center;" href="{{post.customhomepage.link}}">{{post.customhomepage.text}}</a>
-    {{else}}
-    <a style="display: block; text-align: center;" href="/">На главную</a>
-    {{/if}}
+  <div class="row">
+    <div class="col-12">
+      {{#if post.customhomepage}}
+      <a style="display: block; text-align: center;"
+        href="{{post.customhomepage.link}}">{{post.customhomepage.text}}</a>
+      {{else}}
+      <a style="display: block; text-align: center;" href="/">На главную</a>
+      {{/if}}
+    </div>
   </div>
-</div>
 </article>
 {{/content}}
 {{#content "footer"}}

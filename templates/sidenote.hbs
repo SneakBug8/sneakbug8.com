@@ -3,33 +3,39 @@
 <article>
     {{{post.content}}}
 
+    <div class="row mb-3">
+        <div class="col-sm-12">
+            {{#if post.date}}<i id="date">Опубликовано {{post.date}}</i>{{/if}}
+            <div id="vk_like"></div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-sm-12">
-            {{#if post.date}}<i>Опубликовано {{post.date}}</i>{{/if}}
             <div id="vk_comments"></div>
         </div>
     </div>
-<script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
-<hr>
+    <script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
+    <hr>
 
-{{#> helpers/postnav}}
-{{/helpers/postnav}}
+    {{#> helpers/postnav}}
+    {{/helpers/postnav}}
 
-<div class="row">
-    <div class="col-12">
-        {{#if post.customhomepage}}
-        <a style="display: block; text-align: center;"
-            href="{{post.customhomepage.link}}">{{post.customhomepage.text}}</a>
-        {{else}}
-        <a style="display: block; text-align: center;" href="/">На главную</a>
-        {{/if}}
+    <div class="row">
+        <div class="col-12">
+            {{#if post.customhomepage}}
+            <a style="display: block; text-align: center;"
+                href="{{post.customhomepage.link}}">{{post.customhomepage.text}}</a>
+            {{else}}
+            <a style="display: block; text-align: center;" href="/">На главную</a>
+            {{/if}}
+        </div>
     </div>
-</div>
 </article>
 {{/content}}
 {{#content "footer"}}
 <script type="text/javascript">
     VK.init({ apiId: 7003744, onlyWidgets: true });
+    VK.Widgets.Like("vk_like", { type: "button", height: 30 });
     VK.Widgets.Comments("vk_comments", { limit: 10, attach: false, autoPublish: 1, pageUrl: window.location.href }, "{{post._id}}");
 </script>
 {{/content}}

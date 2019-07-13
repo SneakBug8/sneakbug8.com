@@ -1,13 +1,14 @@
 {{#extend "index"}}
 {{#content "content"}}
+<article>
 {{#if notes}}
-    |&nbsp;
-    {{#each notes}}
-    <a href="/sidenotes/{{url}}">{{url}} - {{title}}</a>&nbsp;|&nbsp;
+    | {{#each notes}}
+    <a href="/sidenotes/{{url}}">{{url}}&nbsp;-&nbsp;{{title}}</a> |
     {{/each}}
 {{else}}
 <p>Нет заметок</p>
 {{/if}}
+</article>
 <hr>
 <div class="row">
     <div class="col-12">
