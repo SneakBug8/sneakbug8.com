@@ -391,6 +391,6 @@ html.dark h3,
 html.dark h4,
 html.dark h5,
 html.dark h6,
-html.dark .app *:not(a) {
+html.dark .note *:not(a) {
   color: #eeeeee;
 }
