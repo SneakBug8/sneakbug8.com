@@ -53,14 +53,16 @@
 		<div class="wrapper">
 			<div class="note note-detail-markdown">
 				{{#unless hidehomelink}}
-				<h4 id="headhomelink"><a href="/" class="color-mute">Pavel Nakonechnyy's Blog</a></h4>
+				<h4 id="headhomelink"><a href="/">Pavel Nakonechnyy's Blog</a></h4>
 				{{/unless}}
-				<h1 class="p-name">{{title}}</h1>
+				<h1 class="p-name">{{{title}}}</h1>
 				{{#block "content"}}
 				{{/block}}
-				{{{footer.content}}}
 			</div>
 		</div>
+	</div>
+	<div class="container">
+		{{{footer.content}}}
 	</div>
 </body>
 

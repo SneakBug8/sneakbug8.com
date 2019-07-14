@@ -177,7 +177,6 @@ export default class PostService
 
         for (const post of posts) {
             post.content = marked.parse(post.content);
-
             this.feedService.Feed.addItem({
                 title: post.title,
                 id: post.url,

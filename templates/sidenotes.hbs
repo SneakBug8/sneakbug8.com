@@ -3,7 +3,7 @@
 <article>
 {{#if notes}}
     | {{#each notes}}
-    <a href="/sidenotes/{{url}}">{{url}}&nbsp;-&nbsp;{{title}}</a> |
+    {{url}}&nbsp;&nbsp;<a href="/sidenotes/{{url}}">{{{title}}}</a> |
     {{/each}}
 {{else}}
 <p>Нет заметок</p>
