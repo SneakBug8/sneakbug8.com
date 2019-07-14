@@ -46,78 +46,59 @@ small {
 
 .note {
   position: relative;
-  padding: 40px 20px;
+  padding: 40px 20px 0 20px;
   font-size: 18px;
   line-height: 1.6em;
   min-height: 440px;
 }
 
-#published_footer {
-  position: static;
-  margin-top: 16px;
-  padding-bottom: 15px;
-  text-align: center;
+.footerlist .footerlink a {
+  text-decoration: none;
 }
 
-#published_footer .footer-copyright {
-  width: 100%;
-  margin: 0 auto 10px;
-  text-align: center;
-  float: none;
-}
-
-#published_footer li {
-  float: none;
-  display: inline-block;
-}
-
-#published_footer .first-footer-link {
-  clear: both;
-}
-
-.note-detail-markdown {
+html {
   user-select: auto;
   font-size: 18px;
   line-height: 1.7;
   word-wrap: break-word;
 }
 
-.note-detail-markdown h1,
-.note-detail-markdown h2,
-.note-detail-markdown h3,
-.note-detail-markdown h4,
-.note-detail-markdown h5,
-.note-detail-markdown h6,
-.note-detail-markdown #title {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+#title {
   clear: both;
   line-height: 1.15;
   margin: 1.7em 0 1em 0;
 }
 
-.note-detail-markdown h1,
-.note-detail-markdown #title {
+h1,
+#title {
   font-size: 2.2em;
 }
 
-.note-detail-markdown h1:first-of-type,
-.note-detail-markdown #title:first-of-type {
+h1:first-of-type,
+#title:first-of-type {
   margin-top: 0;
 }
 
-.note-detail-markdown h2 {
+h2 {
   font-size: 1.8em;
 }
 
-.note-detail-markdown h3 {
+h3 {
   font-size: 1.4em;
 }
 
-.note-detail-markdown h4 {
+h4 {
   font-size: 1.2em;
 }
 
-.note-detail-markdown h5,
-.note-detail-markdown h6 {
+h5,
+h6 {
   font-size: 1em;
   text-transform: uppercase;
 }
@@ -127,46 +108,46 @@ p.lead {
   color: #616870;
 }
 
-.note-detail-markdown p,
-.note-detail-markdown ul,
-.note-detail-markdown ol,
-.note-detail-markdown blockquote,
-.note-detail-markdown pre,
-.note-detail-markdown table,
-.note-detail-markdown img {
+p,
+ul,
+ol,
+blockquote,
+pre,
+table,
+img {
   margin-bottom: 1.7em;
 }
 
-.note-detail-markdown img {
+img {
   display: block;
   margin: 0 auto;
   max-width: 100%;
   height: auto;
 }
 
-.note-detail-markdown a {
-  color: RoyalBlue;
-  transition: color .3s ease;
+a {
+  color: #4169e1;
+  transition: color .3s ease, background-color .3s ease, border-color .3s ease;
 }
 
-.note-detail-markdown a:hover {
+a:hover {
   color: #d82e2e;
 }
 
-.note-detail-markdown hr {
+hr {
   border: 0;
-  margin: 3.4em 0;
-  color: RoyalBlue;
+  margin: 2em 0;
+  color: #4169e1;
   height: 1em;
   transition: color .3s ease;
 }
 
 
-.note-detail-markdown hr:hover {
+hr:hover {
   color: #d82e2e;
 }
 
-.note-detail-markdown hr:before {
+hr:before {
   content: '...';
   display: block;
   width: 100%;
@@ -177,14 +158,14 @@ p.lead {
   text-align: center;
 }
 
-.note-detail-markdown blockquote {
+blockquote {
   font-style: italic;
   border-left: 4px solid currentColor;
   margin-left: 0;
   padding-left: 1.7em;
 }
 
-.note-detail-markdown code {
+code {
   font-size: 85%;
   background: #f1f2f3;
   border-radius: 3px;
@@ -194,62 +175,62 @@ p.lead {
   display: inline;
 }
 
-.note-detail-markdown p code {
+p code {
   display: inline;
   padding: 4px;
   color: #616870;
 }
 
-.note-detail-markdown pre {
+pre {
   padding: 1em;
   border-radius: 3px;
   background: #f6f7f8;
 }
 
-.note-detail-markdown pre code {
+pre code {
   color: #616870;
   background: transparent;
   display: block;
   padding: 1em;
 }
 
-.note-detail-markdown table {
+table {
   border-collapse: collapse;
   border-spacing: 0;
   display: block;
   width: 100%;
 }
 
-.note-detail-markdown table tr:nth-child(2n) {
+table tr:nth-child(2n) {
   background-color: #f6f7f8;
 }
 
-.note-detail-markdown table th,
-.note-detail-markdown table td {
+table th,
+table td {
   border: 1px solid #c0c4c8;
   padding: 6px 13px;
 }
 
-.note-detail-markdown table th {
+table th {
   font-weight: 600;
 }
 
 @media only screen and (max-width: 480px) {
-  .note-detail-markdown {
+  html {
     font-size: 16px;
   }
 
-  .note-detail-markdown h1,
-  .note-detail-markdown h2,
-  .note-detail-markdown h3,
-  .note-detail-markdown h4,
-  .note-detail-markdown h5,
-  .note-detail-markdown h6,
-  .note-detail-markdown #title {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  #title {
     margin: 1.19em 0 0.7em 0;
   }
 
-  .note-detail-markdown #title {
+  #title {
     margin-bottom: 0;
   }
 }
@@ -307,38 +288,36 @@ p.lead {
   text-decoration: none;
 }
 
-a.btn, input[type="submit"] {
+a.btn, input[type="submit"], .btn-outline {
   display: inline-block;
   padding: 10px;
   margin: 2px;
   text-decoration: none;
 }
 
-a.btn:not(.btn-outline), input[type="submit"] {
-  background-color: RoyalBlue;
+a.btn, input[type="submit"] {
+  background-color: #4169e1;
   color: #f6f7f8;
-  transition: background-color .3s ease;
 }
 
-a.btn:not(.btn-outline):hover, input[type="submit"]:hover {
+a.btn:hover, input[type="submit"]:hover {
   background-color: #d82e2e;
   color: #f6f7f8;
 }
 
-a.btn.btn-outline {
+a.btn-outline {
   background-color: transparent;
-  border: 1px solid RoyalBlue;
-  transition: border-color .3s ease, color .3s ease;
+  border: 2px solid #4169e1;
 }
 
-a.btn.btn-outline:hover {
+a.btn-outline:hover {
   border-color: #d82e2e;
 }
 
 .card {
   height: 100%;
   width: 100%;
-  border: 1px solid RoyalBlue;
+  border: 1px solid #4169e1;
   border-radius: 5px;
   padding: 10px;
   margin-top: 15px;
@@ -350,7 +329,7 @@ a.btn.btn-outline:hover {
 }
 
 .color-primary {
-  color: RoyalBlue;
+  color: #4169e1;
 }
 
 .color-secondary {
@@ -359,6 +338,98 @@ a.btn.btn-outline:hover {
 
 .color-mute {
   color: #616870;
+}
+
+.highlight-primary {
+  background-color: #4169e1;
+  color: #FFF;
+  padding: 1px;
+  font-style: normal;
+  text-decoration: none;
+}
+
+a.highlight-primary {
+  border: 2px solid #f1f2f3
+}
+
+a.highlight-primary:hover {
+  border: 2px solid #4169e1;
+  background-color: #f1f2f3;
+  color: #0a0a0a;
+}
+
+.highlight-secondary {
+  background-color: #d82e2e;
+  color: #FFF;
+  padding: 1px;
+  font-style: normal;
+  text-decoration: none;
+}
+
+a.highlight-secondary:hover {
+  background-color: white;
+}
+
+.highlight-mute {
+  background-color: #616870;
+  padding: 1px;
+  font-style: normal;
+  color: #0a0a0a;
+  text-decoration: none;
+}
+
+a.highlight-mute:hover {
+  background-color: black;
+  color: white;
+}
+
+.highlight-2 {
+  background-color: #c4ce97;
+  padding: 1px;
+  font-style: italic;
+  color: #0a0a0a;
+  text-decoration: none;
+}
+
+.highlight-3 {
+  background-color: #66e2d5;
+  border-radius: 3px;
+  border: 2px solid #0a0a0a;
+  font-weight: bold;
+  color: #0a0a0a;
+  font-size: 0.9em;
+  font-style: normal;
+  text-decoration: none;
+}
+
+a.highlight-3:hover {
+  background-color: white;
+  border-color: #66e2d5;
+  color: #0a0a0a;
+}
+
+a.button-1 {
+  background-color: #66e2d5;
+  color: #101010;
+  border: 2px solid #0a0a0a;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+a.button-2 {
+  font-size: 1.25em;
+  color: #FFF;
+}
+
+a.button-3 {
+  border-radius: 50%;
+  background-color: #d82e2e;
+}
+
+a.button-3:hover {
+  background-color: #4169e1;
 }
 
 /* Dark theme */
@@ -373,9 +444,10 @@ html.dark .homelink {
   background-color: #101010;
 }
 
-html.dark .note-detail-markdown pre,
+html.dark pre,
 html.dark input,
-html.dark textarea {
+html.dark textarea,
+html.dark code {
   background-color: #1f1f1f;
 }
 

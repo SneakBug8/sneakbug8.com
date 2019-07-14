@@ -5,7 +5,9 @@
   "author": "",
   "license": "GPL",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc & & npm run-script compile-css",
+    "compile-css": "sass assets/style.scss static/style.css -s compressed --no-source-map",
+    "dev": "sass assets/style.less static/style.css --watch",
     "start": "node bin/main.js"
   },
   "dependencies": {
@@ -40,6 +42,7 @@
     "@types/marked": "^0.6.5",
     "@types/node": "^10.12.18",
     "@types/node-fetch": "^2.3.7",
+    "sass": "^1.22.4",
     "ts-node": "8.1.0",
     "tsconfig-paths": "3.8.0",
     "tslint": "5.16.0",
