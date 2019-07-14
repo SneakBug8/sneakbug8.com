@@ -10,4 +10,4 @@ const app = new App(config);
 
 app.bootstrap();
 
-setTimeout(TasksQueue.Run, 3000);
+setTimeout(() => TasksQueue.Run(), 3000);

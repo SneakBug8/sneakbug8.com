@@ -5,6 +5,7 @@ import marked = require("marked");
 import FillerService from "../base/filler.service";
 import { Page } from "../core/services/page.service";
 import SitemapService from "../sitemap/sitemap.service";
+import { TasksQueue } from "tasksqueue";
 marked.setOptions({
     gfm: true,
     langPrefix: "",
@@ -20,6 +21,7 @@ export default class NestPageService
         private readonly fillerService: FillerService,
         private readonly sitemapService: SitemapService)
     {
+        TasksQueue.AddTask(() => this.AppendToSitemap());
     }
 
     public async GetWithUrl(url: string)

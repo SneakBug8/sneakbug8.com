@@ -2,6 +2,7 @@ import { Injectable, Logger } from "@nestjs/common";
 import DotenvService from "../../base/dotenv.service";
 import { CmsService } from "../../base/cms.service";
 import CacheService from "base/cache.service";
+import { TasksQueue } from "tasksqueue";
 
 @Injectable()
 export default class PreloaderService
@@ -11,7 +12,7 @@ export default class PreloaderService
         private readonly cmsService: CmsService,
         private readonly cacheService: CacheService)
     {
-        this.preload();
+        TasksQueue.AddTask(() => this.UpdateCache());
     }
 
     public async preload()
@@ -21,6 +22,15 @@ export default class PreloaderService
         await this.cacheService.set("footer", footer);
 
         Logger.log("Loaded footer into cache");
-        Logger.log("Preloading completed");
+    }
+
+    public async UpdateCache()
+    {
+        this.preload();
+
+        setTimeout(() =>
+        {
+            TasksQueue.AddTask(() => this.preload());
+        }, 1000 * 60 * 5);
     }
 }
