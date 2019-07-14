@@ -2,7 +2,7 @@ import { Get, Controller, Res } from "@nestjs/common";
 import PageService from "../../core/services/page.service";
 import PostService from "../../core/services/post.service";
 import { Response } from "express";
-import FillerService from "../../core/services/filler.service";
+import FillerService from "../../base/filler.service";
 
 @Controller()
 export default class HomeController

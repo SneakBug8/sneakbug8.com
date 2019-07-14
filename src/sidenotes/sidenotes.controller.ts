@@ -1,7 +1,7 @@
 import * as express from "express";
 import { Get, Param, Controller, Res, Req } from "@nestjs/common";
 import SidenotesService from "./sidenotes.service";
-import FillerService from "../core/services/filler.service";
+import FillerService from "../base/filler.service";
 import NotFoundService from "../404/notfound.service";
 
 @Controller()

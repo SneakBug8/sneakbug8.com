@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { RedisService } from "./redis.service";
-import DotenvService from "../../base/dotenv.service";
+import DotenvService from "./dotenv.service";
 
 @Injectable()
 export default class CacheService

@@ -30,7 +30,7 @@ small {
 }
 
 .published-wrap {
-  margin: 1.5em auto 0 auto;
+  margin: 0 auto;
   background-color: white;
   max-width: 832px;
 }
@@ -363,13 +363,8 @@ a.btn.btn-outline:hover {
 
 /* Dark theme */
 #headline {
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 1000;
   width: 100%;
   min-height: 1.5em;
-  background-color: royalblue;
 }
 
 html.dark body,

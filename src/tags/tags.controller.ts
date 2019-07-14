@@ -2,7 +2,7 @@ import * as express from "express";
 import { Get, Controller, Res, Req, Logger } from "@nestjs/common";
 import NotFoundService from "../404/notfound.service";
 import TagsService from "./tags.service";
-import FillerService from "core/services/filler.service";
+import FillerService from "base/filler.service";
 
 @Controller()
 export default class TagsController

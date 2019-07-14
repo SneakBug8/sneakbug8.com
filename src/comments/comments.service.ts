@@ -1,5 +1,5 @@
 import { Injectable } from "@nestjs/common";
-import { CmsService } from "../core/services/cms.service";
+import { CmsService } from "../base/cms.service";
 
 @Injectable()
 export default class CommentsService

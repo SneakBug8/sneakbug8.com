@@ -1,9 +1,10 @@
 import { Injectable, Logger } from "@nestjs/common";
-import { CmsService, CmsObjectData } from "./cms.service";
-
+import { CmsService, CmsObjectData } from "../../base/cms.service";
 import marked = require("marked");
-import FillerService from "./filler.service";
+import FillerService from "../../base/filler.service";
 import SitemapService from "../../sitemap/sitemap.service";
+import { TasksQueue } from "tasksqueue";
+
 marked.setOptions({
     gfm: true,
     langPrefix: "",
@@ -20,7 +21,8 @@ export default class PageService
         private readonly sitemapService: SitemapService)
     {
         this.PagesCollection = process.env.PagesCollection || "Pages";
-        setTimeout(() => this.AppendToSitemap(), Math.random() * 10000);
+
+        TasksQueue.AddTask(() => this.AppendToSitemap());
     }
 
     public async GetWithUrl(url: string)

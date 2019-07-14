@@ -1,12 +1,11 @@
 import { Injectable } from "@nestjs/common";
 import sm = require("sitemap");
-import { CmsService } from "../core/services/cms.service";
 
 @Injectable()
 export default class SitemapService
 {
     public sitemap: Sitemap;
-    constructor(private readonly cmsService: CmsService)
+    constructor()
     {
         // Creates a sitemap object given the input configuration with URLs
         this.sitemap = sm.createSitemap({

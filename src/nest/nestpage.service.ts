@@ -1,8 +1,8 @@
 import { Injectable, Logger } from "@nestjs/common";
-import { CmsService } from "../core/services/cms.service";
+import { CmsService } from "../base/cms.service";
 
 import marked = require("marked");
-import FillerService from "../core/services/filler.service";
+import FillerService from "../base/filler.service";
 import { Page } from "../core/services/page.service";
 import SitemapService from "../sitemap/sitemap.service";
 marked.setOptions({

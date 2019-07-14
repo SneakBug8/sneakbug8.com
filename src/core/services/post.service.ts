@@ -1,10 +1,12 @@
 import { Injectable, Logger } from "@nestjs/common";
-import { CmsService } from "./cms.service";
+import { CmsService } from "../../base/cms.service";
 
 import marked = require("marked");
-import FillerService from "./filler.service";
+import FillerService from "../../base/filler.service";
 import { Page } from "./page.service";
 import SitemapService from "../../sitemap/sitemap.service";
+import FeedService from "feed/feed.service";
+import { TasksQueue } from "tasksqueue";
 
 marked.setOptions({
     gfm: true,
@@ -17,10 +19,13 @@ export default class PostService
 {
     public constructor(private readonly cmsService: CmsService,
         private readonly fillerService: FillerService,
-        private readonly sitemapService: SitemapService)
+        private readonly sitemapService: SitemapService,
+        private readonly feedService: FeedService)
     {
         this.PostsCollection = process.env.PostsCollection as string;
-        setTimeout(() => this.AppendToSitemap(), Math.random() * 10000);
+
+        TasksQueue.AddTask(() => this.AppendToSitemap());
+        TasksQueue.AddTask(() => this.AppendToFeed());
     }
 
     public PostsCollection = "Posts";
@@ -148,6 +153,42 @@ export default class PostService
         }
 
         Logger.log("Added " + posts.length + " posts to sitemap");
+    }
+
+    async AppendToFeed()
+    {
+        const posts = await this.cmsService.collections.getWithParams<Post[]>(this.PostsCollection, {
+            limit: 1000,
+            sort: {
+                _modified: -1
+            },
+            fields: {
+                title: 1,
+                content: 1,
+                date: 1,
+                url: 1,
+                image: 1
+            }
+        });
+
+        if (!posts) {
+            return;
+        }
+
+        for (const post of posts) {
+            post.content = marked.parse(post.content);
+
+            this.feedService.Feed.addItem({
+                title: post.title,
+                id: post.url,
+                link: "https://sneakbug8.com/" + post.url,
+                content: post.content,
+                date: new Date(post.date || post._created),
+                image: post.image
+              });
+        }
+
+        Logger.log("Added " + posts.length + " posts to RSS");
     }
 }
 

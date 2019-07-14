@@ -1,22 +1,18 @@
 import { Module } from "@nestjs/common";
 
-import CacheService from "./services/cache.service";
 import PageService from "./services/page.service";
 import PostService from "./services/post.service";
 
-import { CmsService } from "./services/cms.service";
-import FillerService from "./services/filler.service";
-import { RedisService } from "./services/redis.service";
 import PreloaderService from "./services/preloader.service";
 import RequestService from "./services/request.service";
 import { BaseModule } from "base/base.module";
+import { FeedModule } from "feed/feed.module";
+import { SitemapModule } from "sitemap/sitemap.module";
 
 @Module({
-  imports: [BaseModule],
+  imports: [BaseModule, FeedModule, SitemapModule],
   controllers: [],
-  providers: [CacheService, PreloaderService, CmsService, FillerService, PageService, PostService,
-    RedisService, RequestService],
-  exports: [CacheService, CmsService, FillerService, PageService, PostService,
-    RedisService],
+  providers: [PreloaderService, PageService, PostService, RequestService],
+  exports: [PageService, PostService],
 })
 export class CoreModule { }

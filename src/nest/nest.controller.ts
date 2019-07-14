@@ -2,7 +2,7 @@ import * as express from "express";
 import { Get, Param, Controller, Res, Req } from "@nestjs/common";
 import NestPageService from "./nestpage.service";
 import PageService from "../core/services/page.service";
-import FillerService from "../core/services/filler.service";
+import FillerService from "../base/filler.service";
 import NotFoundService from "../404/notfound.service";
 
 @Controller()

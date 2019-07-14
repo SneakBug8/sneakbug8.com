@@ -1,10 +1,12 @@
 import { Injectable, Logger } from "@nestjs/common";
-import { CmsService } from "../core/services/cms.service";
+import { CmsService } from "../base/cms.service";
 
 import marked = require("marked");
-import FillerService from "../core/services/filler.service";
+import FillerService from "../base/filler.service";
 import { Page } from "core/services/page.service";
 import SitemapService from "../sitemap/sitemap.service";
+import FeedService from "feed/feed.service";
+import { TasksQueue } from "tasksqueue";
 marked.setOptions({
     gfm: true,
     langPrefix: "",
@@ -18,9 +20,12 @@ export default class SidenotesService
 
     public constructor(private readonly cmsService: CmsService,
         private readonly fillerService: FillerService,
-        private readonly sitemapService: SitemapService)
+        private readonly sitemapService: SitemapService,
+        private readonly feedService: FeedService)
     {
-        setTimeout(() => this.AppendToSitemap(), Math.random() * 10000);
+
+        TasksQueue.AddTask(() => this.AppendToSitemap());
+        TasksQueue.AddTask(() => this.AppendToFeed());
     }
 
     public async GetWithUrl(url: string)
@@ -117,7 +122,8 @@ export default class SidenotesService
         });
     }
 
-    async AppendToSitemap() {
+    async AppendToSitemap()
+    {
         const notes = await this.cmsService.collections.getWithParams<Note[]>(this.NotesCollection, {
             limit: 1000,
             sort: {
@@ -142,8 +148,43 @@ export default class SidenotesService
 
         Logger.log("Added " + notes.length + " notes to sitemap");
     }
+
+    async AppendToFeed()
+    {
+        const notes = await this.cmsService.collections.getWithParams<Note[]>(this.NotesCollection, {
+            limit: 1000,
+            sort: {
+                _modified: -1
+            },
+            fields: {
+                title: 1,
+                content: 1,
+                url: 1,
+                date: 1
+            }
+        });
+
+        if (!notes) {
+            return;
+        }
+
+        for (const note of notes) {
+            note.content = marked.parse(note.content);
+
+            this.feedService.Feed.addItem({
+                title: note.title,
+                id: "sidenote" + note.url,
+                link: "https://sneakbug8.com/sidenotes/" + note.url,
+                content: note.content,
+                date: new Date(note.date || note._created)
+            });
+        }
+
+        Logger.log("Added " + notes.length + " notes to RSS");
+    }
 }
 
-interface Note extends Page {
+interface Note extends Page
+{
 
 }

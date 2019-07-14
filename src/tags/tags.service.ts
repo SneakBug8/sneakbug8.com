@@ -1,5 +1,5 @@
 import { Injectable } from "@nestjs/common";
-import { CmsService } from "../core/services/cms.service";
+import { CmsService } from "../base/cms.service";
 import PostService, { Post } from "core/services/post.service";
 
 import * as marked from "marked";
@@ -9,7 +9,7 @@ export default class TagsService
 {
     private readonly PostsCollection: string = "Posts";
 
-    public constructor(private readonly cmsService: CmsService, private readonly postService: PostService)
+    public constructor(private readonly cmsService: CmsService, postService: PostService)
     {
         this.PostsCollection = postService.PostsCollection;
     }

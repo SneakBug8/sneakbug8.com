@@ -1,8 +1,7 @@
 import fetch from "node-fetch";
 import { Injectable, Logger } from "@nestjs/common";
-import CacheService from "./cache.service";
-
 import * as _ from "lodash";
+import CacheService from "base/cache.service";
 
 /*
 Obsolette and obviously stupid try to cache headless cms requests

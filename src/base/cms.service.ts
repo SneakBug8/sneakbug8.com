@@ -1,6 +1,6 @@
 import fetch from "node-fetch";
 import { Injectable } from "@nestjs/common";
-import DotenvService from "../../base/dotenv.service";
+import DotenvService from "./dotenv.service";
 
 @Injectable()
 export class CmsService

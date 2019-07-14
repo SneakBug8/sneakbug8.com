@@ -6,8 +6,17 @@ import { NotFoundModule } from "./404/notfound.module";
 import { SidenotesModule } from "./sidenotes/sidenotes.module";
 import { CommentsModule } from "comments/comments.module";
 import { TagsModule } from "tags/tags.module";
+import { FeedModule } from "feed/feed.module";
 
 @Module({
-  imports: [SitemapModule, NestModule, SidenotesModule, TagsModule, CommentsModule, ViewsModule , NotFoundModule]
+  imports: [
+    FeedModule,
+    SitemapModule,
+    SidenotesModule,
+    TagsModule,
+    CommentsModule,
+    NestModule,
+    ViewsModule,
+    NotFoundModule]
 })
 export class AppModule { }

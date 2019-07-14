@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common";
 
 import marked = require("marked");
-import FillerService from "../core/services/filler.service";
+import FillerService from "../base/filler.service";
 import PageService, { Page } from "../core/services/page.service";
 import * as express from "express";
 

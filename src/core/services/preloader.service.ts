@@ -1,7 +1,7 @@
 import { Injectable, Logger } from "@nestjs/common";
 import DotenvService from "../../base/dotenv.service";
-import { CmsService } from "./cms.service";
-import CacheService from "./cache.service";
+import { CmsService } from "../../base/cms.service";
+import CacheService from "base/cache.service";
 
 @Injectable()
 export default class PreloaderService
