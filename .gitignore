@@ -37,4 +37,5 @@ lerna-debug.log*
 package-lock.json
 tsconfig*.tsbuildinfo
 
-static/*.css
+root/**/*.css
+/dev

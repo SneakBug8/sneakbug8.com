@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc & & npm run-script compile-css",
     "compile-css": "sass assets/style.scss static/style.css -s compressed --no-source-map",
-    "dev": "sass assets/style.less static/style.css --watch",
+    "dev": "concurrently \"sass assets/style.scss dev/static/style.css --watch\" \"serve dev\"",
     "start": "node bin/main.js"
   },
   "dependencies": {
