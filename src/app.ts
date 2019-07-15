@@ -37,7 +37,7 @@ export class App
         const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
         // set Static Assets
-        app.useStaticAssets(path.join(__dirname, "..", "root"), {
+        app.useStaticAssets(path.join(__dirname, "..", "www"), {
             maxAge: 31536000
         });
 

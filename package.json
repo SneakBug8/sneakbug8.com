@@ -5,9 +5,6 @@
   "author": "",
   "license": "GPL",
   "scripts": {
-    "build": "tsc & & npm run-script compile-css",
-    "compile-css": "sass assets/style.scss static/style.css -s compressed --no-source-map",
-    "dev": "concurrently \"sass assets/style.scss dev/static/style.css --watch\" \"serve dev\"",
     "start": "node bin/main.js"
   },
   "dependencies": {
@@ -42,6 +39,11 @@
     "@types/marked": "^0.6.5",
     "@types/node": "^10.12.18",
     "@types/node-fetch": "^2.3.7",
+    "gulp": "^4.0.2",
+    "gulp-minify": "^3.1.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-typescript": "^5.0.1",
+    "node-sass": "^4.12.0",
     "sass": "^1.22.4",
     "ts-node": "8.1.0",
     "tsconfig-paths": "3.8.0",
